@@ -1,0 +1,1760 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FatLoss With Sahil | Health Transformation Coaching</title>
+  <meta name="description" content="Personalised fat loss and health coaching for PCOD, fatty liver, thyroid, high BP, and diabetes. Lose 5–8 kg in 90 days with a bloodwork-backed plan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700;1,9..144,900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
+  <style>
+    /* ═══════════════════════════════════════════
+       RESET
+    ═══════════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    img { max-width: 100%; display: block; object-fit: cover; }
+    a { text-decoration: none; color: inherit; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    /* ═══════════════════════════════════════════
+       THEME TOKENS — DARK (default) + LIGHT
+    ═══════════════════════════════════════════ */
+    :root {
+      --bg:          #07070F;
+      --surface:     #0F0F1E;
+      --card:        #141428;
+      --card2:       #1A1A30;
+      --purple:      #8B5CF6;
+      --purple-lt:   #A78BFA;
+      --purple-dim:  rgba(139,92,246,0.12);
+      --indigo:      #6366F1;
+      --gold:        #F59E0B;
+      --green:       #10B981;
+      --text:        #F0EEFF;
+      --text2:       rgba(240,238,255,0.65);
+      --muted:       #8B8FA8;
+      --border:      rgba(139,92,246,0.18);
+      --border2:     rgba(255,255,255,0.07);
+      --white:       #FFFFFF;
+      --nav-h:       72px;
+      --r:           12px;
+      --max:         1140px;
+      --glow-hero:   radial-gradient(ellipse 60% 60% at 75% 50%, rgba(99,102,241,0.22) 0%, transparent 70%);
+      --shadow-card: 0 8px 32px rgba(0,0,0,0.5);
+      --shadow-glow: 0 0 40px rgba(139,92,246,0.25);
+    }
+
+    [data-theme="light"] {
+      --bg:          #FAFAFF;
+      --surface:     #F0EDF9;
+      --card:        #FFFFFF;
+      --card2:       #F5F2FF;
+      --purple:      #7C3AED;
+      --purple-lt:   #8B5CF6;
+      --purple-dim:  rgba(124,58,237,0.08);
+      --indigo:      #4F46E5;
+      --text:        #0D0D1A;
+      --text2:       rgba(13,13,26,0.62);
+      --muted:       #6B7280;
+      --border:      rgba(124,58,237,0.15);
+      --border2:     rgba(0,0,0,0.08);
+      --glow-hero:   radial-gradient(ellipse 60% 60% at 75% 50%, rgba(99,102,241,0.1) 0%, transparent 70%);
+      --shadow-card: 0 4px 24px rgba(0,0,0,0.08);
+      --shadow-glow: 0 0 40px rgba(124,58,237,0.15);
+    }
+
+    /* ═══════════════════════════════════════════
+       BASE
+    ═══════════════════════════════════════════ */
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      transition: background 0.3s, color 0.3s;
+    }
+    h1,h2,h3,h4 { font-family: 'Fraunces', serif; line-height: 1.12; }
+
+    /* ═══════════════════════════════════════════
+       LAYOUT
+    ═══════════════════════════════════════════ */
+    .wrap    { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
+    .sec     { padding: 6rem 1.5rem; }
+    .sec-in  { max-width: var(--max); margin: 0 auto; }
+
+    /* ═══════════════════════════════════════════
+       BUTTONS
+    ═══════════════════════════════════════════ */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+      font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; font-weight: 600;
+      padding: 0.875rem 1.875rem; border-radius: 8px;
+      transition: transform .18s, box-shadow .18s, background .18s, border-color .18s;
+      white-space: nowrap;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-lg { padding: 1rem 2.25rem; font-size: 1rem; }
+    .btn-purple {
+      background: var(--purple); color: #fff;
+      box-shadow: 0 4px 24px rgba(139,92,246,0.3);
+    }
+    .btn-purple:hover { background: var(--purple-lt); box-shadow: 0 8px 32px rgba(139,92,246,0.45); }
+    .btn-ghost {
+      background: transparent; color: var(--text);
+      border: 1.5px solid var(--border);
+    }
+    .btn-ghost:hover { border-color: var(--purple-lt); background: var(--purple-dim); }
+    .btn-wa { background: #25D366; color: #fff; }
+    .btn-wa:hover { background: #1DB954; box-shadow: 0 8px 24px rgba(37,211,102,0.35); }
+    .btn-outline-white {
+      background: transparent; color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.3);
+    }
+    .btn-outline-white:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.07); }
+
+    /* ═══════════════════════════════════════════
+       EYEBROW LABEL
+    ═══════════════════════════════════════════ */
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em;
+      text-transform: uppercase; margin-bottom: 1rem;
+    }
+    .eyebrow::before {
+      content: ''; display: block;
+      width: 20px; height: 2px; background: var(--purple); border-radius: 2px;
+    }
+    .eyebrow-purple { color: var(--purple-lt); }
+    .eyebrow-muted  { color: var(--muted); }
+    .eyebrow-white  { color: rgba(255,255,255,0.55); }
+    .eyebrow-white::before { background: rgba(255,255,255,0.4); }
+
+    /* ═══════════════════════════════════════════
+       SECTION LABEL CHIP
+    ═══════════════════════════════════════════ */
+    .chip {
+      display: inline-block;
+      padding: 0.35rem 1rem;
+      border-radius: 100px;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+      background: var(--purple-dim);
+      color: var(--purple-lt);
+      border: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ═══════════════════════════════════════════
+       NAV
+    ═══════════════════════════════════════════ */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+      height: var(--nav-h);
+      display: flex; align-items: center;
+      padding: 0 2rem;
+      transition: background 0.3s, box-shadow 0.3s, backdrop-filter 0.3s;
+    }
+    #nav.scrolled {
+      background: rgba(7,7,15,0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 var(--border2);
+    }
+    [data-theme="light"] #nav.scrolled {
+      background: rgba(250,250,255,0.92);
+    }
+    .nav-in {
+      max-width: var(--max); margin: 0 auto; width: 100%;
+      display: flex; align-items: center; gap: 1.5rem;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.625rem; margin-right: auto; }
+    .logo-mark {
+      width: 36px; height: 36px; background: var(--purple); border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Fraunces', serif; font-weight: 900; font-size: 1.125rem; color: #fff;
+    }
+    .logo-name { font-weight: 700; font-size: 0.9375rem; }
+    .logo-name span { color: var(--purple-lt); }
+    .nav-links { display: flex; align-items: center; gap: 1.75rem; }
+    .nav-links a { font-size: 0.875rem; color: var(--text2); font-weight: 500; transition: color .2s; }
+    .nav-links a:hover { color: var(--text); }
+
+    /* theme toggle */
+    .theme-toggle {
+      width: 48px; height: 26px; border-radius: 13px;
+      background: var(--card2); border: 1px solid var(--border);
+      position: relative; cursor: pointer; flex-shrink: 0;
+      transition: background 0.3s;
+    }
+    .theme-toggle-thumb {
+      position: absolute; top: 3px; left: 3px;
+      width: 18px; height: 18px; border-radius: 50%;
+      background: var(--purple);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.625rem; transition: transform 0.3s, background 0.3s;
+    }
+    [data-theme="light"] .theme-toggle-thumb { transform: translateX(22px); }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; padding: 4px; }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: var(--text2); border-radius: 2px; transition: .25s;
+    }
+    #mob-menu {
+      display: none; position: fixed;
+      top: var(--nav-h); left: 0; right: 0; z-index: 299;
+      background: var(--surface);
+      backdrop-filter: blur(20px);
+      padding: 2rem; flex-direction: column; gap: 1.25rem;
+      border-top: 1px solid var(--border2);
+    }
+    #mob-menu.open { display: flex; }
+    #mob-menu a { font-size: 1.0625rem; color: var(--text2); font-weight: 500; padding: 0.5rem 0; border-bottom: 1px solid var(--border2); }
+
+    /* ═══════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════ */
+    #hero {
+      background: var(--bg);
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding-top: var(--nav-h);
+      position: relative; overflow: hidden;
+    }
+    .hero-bg-glow {
+      position: absolute; inset: 0;
+      background: var(--glow-hero);
+      pointer-events: none;
+    }
+    .hero-grid-lines {
+      position: absolute; inset: 0;
+      background-image:
+              linear-gradient(rgba(139,92,246,0.04) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(139,92,246,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+    .hero-in {
+      max-width: var(--max); margin: 0 auto; padding: 5rem 1.5rem;
+      display: grid; grid-template-columns: 1fr 440px;
+      gap: 4rem; align-items: center;
+      position: relative; z-index: 1;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.625rem;
+      padding: 0.4rem 1rem; border-radius: 100px;
+      background: var(--purple-dim); border: 1px solid var(--border);
+      margin-bottom: 2rem;
+    }
+    .badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--purple); animation: pulse 2s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(1.3)} }
+    .badge-txt { color: var(--purple-lt); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    /* BIG hero headline — editorial staggered layout */
+    .hero-hl {
+      font-size: clamp(3.5rem, 6.5vw, 6rem);
+      font-weight: 900;
+      color: var(--text);
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      margin-bottom: 2rem;
+    }
+    .hero-hl .line { display: block; }
+    .hero-hl .line-indent { padding-left: clamp(1.5rem, 4vw, 4rem); }
+    .hero-hl em {
+      font-style: italic; font-weight: 700;
+      color: var(--purple-lt);
+    }
+    .hero-hl .thin { font-weight: 300; color: var(--text2); }
+
+    .hero-sub {
+      font-size: 1.125rem; color: var(--text2);
+      max-width: 520px; margin-bottom: 1.5rem; line-height: 1.78;
+    }
+
+    /* quals strip */
+    .hero-quals {
+      display: flex; flex-wrap: wrap; gap: 0.625rem;
+      margin-bottom: 2.5rem;
+    }
+    .qual {
+      display: flex; align-items: center; gap: 0.4rem;
+      font-size: 0.8125rem; font-weight: 500; color: var(--text2);
+      padding: 0.35rem 0.875rem; border-radius: 100px;
+      border: 1px solid var(--border2);
+      background: var(--purple-dim);
+    }
+    .qual-icon { font-size: 0.75rem; }
+
+    .hero-ctas { display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 3rem; }
+
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .htag {
+      font-size: 0.75rem; font-weight: 500;
+      color: var(--muted); border: 1px solid var(--border2);
+      border-radius: 100px; padding: 0.3rem 0.875rem;
+    }
+
+    /* HERO PHOTO SIDE */
+    .hero-photo-wrap { position: relative; }
+    .hero-photo-box {
+      width: 100%; border-radius: 20px; overflow: hidden;
+      border: 1px solid var(--border);
+      aspect-ratio: 3/4;
+      position: relative;
+      box-shadow: var(--shadow-glow);
+    }
+    .hero-photo-box img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-photo-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(7,7,15,0.6) 0%, transparent 50%);
+    }
+    /* credential badges floating on photo */
+    .float-badge {
+      position: absolute; border-radius: 12px;
+      padding: 0.875rem 1.125rem;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(7,7,15,0.65);
+      color: #fff;
+      animation: float 4s ease-in-out infinite;
+    }
+    .float-badge-1 { top: 1.5rem; right: -1.25rem; animation-delay: 0s; }
+    .float-badge-2 { bottom: 3rem; left: -1.25rem; animation-delay: 1.5s; }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+    .fb-num {
+      font-family: 'Fraunces', serif; font-size: 1.75rem; font-weight: 900;
+      color: var(--purple-lt); line-height: 1;
+    }
+    .fb-lbl { font-size: 0.75rem; font-weight: 600; opacity: 0.75; }
+
+    /* ═══════════════════════════════════════════
+       TRUST BAR
+    ═══════════════════════════════════════════ */
+    #trust {
+      background: var(--surface);
+      padding: 2.75rem 1.5rem;
+      border-top: 1px solid var(--border2);
+      border-bottom: 1px solid var(--border2);
+    }
+    .trust-grid {
+      max-width: var(--max); margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem;
+    }
+    .trust-item { text-align: center; }
+    .trust-n {
+      font-family: 'Fraunces', serif; font-weight: 900; font-size: 2.5rem;
+      color: var(--purple-lt); line-height: 1; margin-bottom: 0.375rem;
+    }
+    .trust-l { font-size: 0.8125rem; color: var(--muted); font-weight: 500; }
+    .trust-divider {
+      width: 1px; background: var(--border2);
+      display: none;
+    }
+
+    /* ═══════════════════════════════════════════
+       ABOUT / WHO IS SAHIL
+    ═══════════════════════════════════════════ */
+    #about { background: var(--bg); }
+    .about-grid {
+      display: grid; grid-template-columns: 480px 1fr;
+      gap: 5rem; align-items: center;
+    }
+    .about-photo-box {
+      border-radius: 20px; overflow: hidden;
+      border: 1px solid var(--border);
+      aspect-ratio: 3/4;
+      position: relative;
+      box-shadow: var(--shadow-glow);
+    }
+    .about-photo-box img { width: 100%; height: 100%; object-fit: cover; }
+    .about-photo-badge {
+      position: absolute; bottom: 1.5rem; left: 1.5rem;
+      background: var(--purple); color: #fff;
+      border-radius: 12px; padding: 1rem 1.375rem;
+    }
+    .apb-n { font-family: 'Fraunces', serif; font-size: 2.25rem; font-weight: 900; line-height: 1; }
+    .apb-l { font-size: 0.8125rem; font-weight: 600; opacity: 0.9; }
+
+    .about-content {}
+    .about-hl {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      margin-bottom: 1.5rem; line-height: 1.1;
+    }
+    .about-hl em { font-style: italic; color: var(--purple-lt); }
+    .about-p { color: var(--text2); font-size: 1.0625rem; line-height: 1.8; margin-bottom: 1.25rem; }
+
+    /* credential tiles */
+    .cred-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0.875rem; margin-top: 2rem;
+    }
+    .cred-tile {
+      padding: 1.125rem; border-radius: var(--r);
+      background: var(--card); border: 1px solid var(--border);
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .cred-tile:hover { border-color: var(--purple); box-shadow: 0 0 20px rgba(139,92,246,0.15); }
+    .cred-icon {
+      width: 34px; height: 34px; flex-shrink: 0; border-radius: 8px;
+      background: var(--purple-dim); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center; font-size: 1rem;
+    }
+    .cred-name { font-size: 0.875rem; font-weight: 600; margin-bottom: 0.125rem; }
+    .cred-desc { font-size: 0.8125rem; color: var(--muted); line-height: 1.45; }
+
+    /* ═══════════════════════════════════════════
+       HEALTH CONDITIONS GRID
+    ═══════════════════════════════════════════ */
+    #conditions { background: var(--surface); }
+    .cond-hd { text-align: center; max-width: 700px; margin: 0 auto 3.5rem; }
+    .cond-hl {
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      margin-bottom: 1rem;
+    }
+    .cond-hl span { color: var(--purple-lt); font-style: italic; }
+    .cond-sub { color: var(--text2); font-size: 1.0625rem; }
+
+    .cond-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    .cond-card {
+      background: var(--card); border: 1px solid var(--border2);
+      border-radius: var(--r); padding: 1.625rem 1.25rem;
+      text-align: center;
+      transition: border-color .2s, transform .2s, box-shadow .2s;
+      cursor: default;
+    }
+    .cond-card:hover {
+      border-color: var(--purple);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(139,92,246,0.18);
+    }
+    .cond-card-icon { font-size: 2rem; margin-bottom: 0.875rem; }
+    .cond-card h3 { font-family: 'DM Sans',sans-serif; font-size: 0.9375rem; font-weight: 700; margin-bottom: 0.375rem; }
+    .cond-card p { font-size: 0.8125rem; color: var(--muted); line-height: 1.5; }
+    .cond-card-more {
+      border: 2px dashed var(--border);
+      background: var(--purple-dim);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.25rem;
+    }
+    .cond-more-n { font-family: 'Fraunces',serif; font-weight: 900; font-size: 2rem; color: var(--purple-lt); }
+    .cond-more-l { font-size: 0.8125rem; color: var(--muted); font-weight: 600; }
+
+    /* ═══════════════════════════════════════════
+       HOW IT WORKS (timeline)
+    ═══════════════════════════════════════════ */
+    #how { background: var(--bg); }
+    .how-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: start;
+    }
+    .how-hd-hl { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 1rem; }
+    .how-hd-hl em { font-style: italic; color: var(--purple-lt); }
+    .how-hd-p { color: var(--text2); font-size: 1.0625rem; line-height: 1.75; }
+
+    .steps-list { display: flex; flex-direction: column; gap: 0; }
+    .step-item {
+      display: flex; gap: 1.5rem; align-items: flex-start;
+      position: relative; padding-bottom: 2.25rem;
+    }
+    .step-item:last-child { padding-bottom: 0; }
+    .step-left { display: flex; flex-direction: column; align-items: center; gap: 0; flex-shrink: 0; }
+    .step-num-circle {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: var(--card); border: 2px solid var(--purple);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Fraunces', serif; font-weight: 900; font-size: 1.1875rem;
+      color: var(--purple-lt); flex-shrink: 0;
+      box-shadow: 0 0 18px rgba(139,92,246,0.25);
+      position: relative; z-index: 1;
+    }
+    .step-line {
+      width: 2px; flex: 1; min-height: 2rem;
+      background: linear-gradient(to bottom, var(--purple), transparent);
+      margin-top: 2px; opacity: 0.3;
+    }
+    .step-item:last-child .step-line { display: none; }
+    .step-body { padding-top: 0.625rem; }
+    .step-title { font-family: 'DM Sans',sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.375rem; }
+    .step-desc { font-size: 0.9375rem; color: var(--text2); line-height: 1.65; }
+
+    /* ═══════════════════════════════════════════
+       90-DAY VISION
+    ═══════════════════════════════════════════ */
+    #vision {
+      background: var(--surface);
+      position: relative; overflow: hidden;
+    }
+    #vision::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(139,92,246,0.1) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .vision-in { max-width: 820px; margin: 0 auto; text-align: center; position: relative; z-index:1; }
+    .vision-hl { font-size: clamp(2rem, 4vw, 3.25rem); margin-bottom: 2rem; }
+    .vision-hl em { font-style: italic; color: var(--purple-lt); }
+    .vision-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
+    .vpill {
+      display: flex; align-items: center; gap: 0.5rem;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 100px; padding: 0.625rem 1.25rem;
+      color: var(--text); font-size: 0.9375rem; font-weight: 500;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .vpill:hover { border-color: var(--purple); box-shadow: 0 0 16px rgba(139,92,246,0.2); }
+    .vpill-check { color: var(--green); font-size: 0.8125rem; font-weight: 700; }
+
+    /* ═══════════════════════════════════════════
+       BEFORE / AFTER TRANSFORMATION CAROUSEL
+    ═══════════════════════════════════════════ */
+    #transformations { background: var(--bg); }
+    .trans-hd { margin-bottom: 3rem; }
+    .trans-hl { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 0.75rem; }
+    .trans-hl em { font-style: italic; color: var(--purple-lt); }
+    .trans-sub { color: var(--text2); font-size: 1.0625rem; max-width: 520px; }
+
+    /* carousel wrapper */
+    .carousel-track-wrap { position: relative; overflow: hidden; }
+    .carousel-track {
+      display: flex; gap: 1.5rem;
+      overflow-x: auto; scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      padding: 1rem 0 2rem;
+      scrollbar-width: none;
+    }
+    .carousel-track::-webkit-scrollbar { display: none; }
+
+    /* transformation card */
+    .trans-card {
+      flex: 0 0 340px; scroll-snap-align: start;
+      background: var(--card); border: 1px solid var(--border2);
+      border-radius: 18px; overflow: hidden;
+      transition: border-color .2s, transform .2s, box-shadow .25s;
+    }
+    .trans-card:hover {
+      border-color: var(--purple);
+      transform: translateY(-6px);
+      box-shadow: 0 18px 48px rgba(139,92,246,0.2);
+    }
+
+    /* before/after photo split */
+    .ba-split {
+      width: 100%; height: 240px;
+      display: flex; position: relative; overflow: hidden;
+    }
+    .ba-before, .ba-after {
+      flex: 1; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .ba-before {
+      background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+      filter: grayscale(1);
+    }
+    .ba-after {
+      background: linear-gradient(135deg, rgba(99,102,241,0.3) 0%, rgba(139,92,246,0.5) 100%);
+      filter: none;
+    }
+    .ba-before img, .ba-after img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center top;
+    }
+    .ba-img-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem;
+    }
+    .bap-icon { font-size: 2rem; opacity: 0.5; }
+    .bap-txt { font-size: 0.75rem; font-weight: 500; opacity: 0.5; }
+    .ba-label {
+      position: absolute; top: 0.75rem;
+      font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 0.25rem 0.625rem;
+      border-radius: 100px;
+    }
+    .ba-before .ba-label {
+      left: 0.75rem;
+      background: rgba(0,0,0,0.6); color: rgba(255,255,255,0.7);
+    }
+    .ba-after .ba-label {
+      right: 0.75rem;
+      background: var(--purple); color: #fff;
+    }
+    .ba-divider {
+      position: absolute; left: 50%; top: 0; bottom: 0;
+      width: 2px; background: #fff; z-index: 2;
+    }
+    .ba-divider::before {
+      content: '↔';
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 28px; height: 28px; border-radius: 50%;
+      background: #fff; color: #000;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.6875rem; font-weight: 700;
+    }
+    /* stat badge on card */
+    .ba-stat {
+      position: absolute; bottom: 0.75rem; left: 50%; transform: translateX(-50%);
+      background: rgba(7,7,15,0.85); border: 1px solid rgba(139,92,246,0.4);
+      backdrop-filter: blur(8px); border-radius: 100px;
+      padding: 0.3rem 0.875rem;
+      font-size: 0.8125rem; font-weight: 700; color: var(--purple-lt);
+      white-space: nowrap; z-index: 3;
+    }
+
+    .trans-body { padding: 1.375rem 1.5rem; }
+    .trans-name { font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .trans-detail { font-size: 0.8125rem; color: var(--purple-lt); font-weight: 600; margin-bottom: 0.875rem; }
+    .trans-q { font-size: 0.875rem; color: var(--text2); line-height: 1.6; font-style: italic; }
+    .trans-stars { color: var(--gold); font-size: 0.8125rem; margin-bottom: 0.5rem; letter-spacing: 0.05em; }
+
+    /* carousel controls */
+    .carousel-controls {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-top: 0.5rem;
+    }
+    .carousel-dots { display: flex; gap: 0.5rem; }
+    .cdot {
+      width: 8px; height: 8px; border-radius: 4px;
+      background: var(--border); cursor: pointer;
+      transition: width .3s, background .3s;
+    }
+    .cdot.active { width: 24px; background: var(--purple); }
+    .carousel-btns { display: flex; gap: 0.5rem; }
+    .carousel-btn {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: var(--card); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text); font-size: 1rem;
+      transition: border-color .2s, background .2s;
+    }
+    .carousel-btn:hover { border-color: var(--purple); background: var(--purple-dim); }
+
+    /* ═══════════════════════════════════════════
+       FAILURE / CYCLE SECTION
+    ═══════════════════════════════════════════ */
+    #failure { background: var(--surface); }
+    .fail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .fail-hl { font-size: clamp(1.875rem, 3vw, 2.625rem); margin-bottom: 1.25rem; }
+    .fail-p { color: var(--text2); font-size: 1.0625rem; line-height: 1.78; margin-bottom: 2rem; }
+    .cycle-box {
+      padding: 1.5rem; border-radius: var(--r);
+      background: var(--card); border: 1px solid var(--border2);
+      display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem;
+    }
+    .cy-item { font-size: 0.875rem; font-weight: 600; color: var(--muted); }
+    .cy-arrow { color: var(--border); }
+    .cy-end { color: #F87171 !important; }
+
+    .promise-card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 2.25rem;
+      box-shadow: var(--shadow-glow);
+    }
+    .promise-title { font-family: 'Fraunces',serif; font-size: 1.25rem; color: var(--purple-lt); margin-bottom: 1.625rem; }
+    .promise-list { display: flex; flex-direction: column; gap: 1.125rem; }
+    .promise-row { display: flex; align-items: flex-start; gap: 0.875rem; }
+    .p-check {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--purple-dim); border: 1.5px solid var(--purple);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 0.1rem;
+      color: var(--purple-lt); font-size: 0.625rem; font-weight: 700;
+    }
+    .promise-row span { color: var(--text2); font-size: 0.9375rem; line-height: 1.65; }
+
+    /* ═══════════════════════════════════════════
+       TESTIMONIALS / RESULTS
+    ═══════════════════════════════════════════ */
+    #results { background: var(--bg); }
+    .res-hd { margin-bottom: 3rem; }
+    .res-hl { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 0.75rem; }
+    .res-sub { color: var(--text2); font-size: 1.0625rem; }
+
+    .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
+    .testi-card {
+      background: var(--card); border: 1px solid var(--border2);
+      border-radius: 16px; overflow: hidden;
+      transition: border-color .2s, transform .2s, box-shadow .25s;
+    }
+    .testi-card:hover { border-color: var(--purple); transform: translateY(-4px); box-shadow: var(--shadow-glow); }
+
+    /* big metric on card */
+    .testi-metric {
+      padding: 1.75rem 1.75rem 0;
+      display: flex; align-items: flex-end; gap: 0.75rem;
+    }
+    .metric-n { font-family: 'Fraunces',serif; font-size: 3.5rem; font-weight: 900; line-height: 1; color: var(--purple-lt); }
+    .metric-unit { font-size: 1.125rem; color: var(--purple-lt); font-weight: 600; padding-bottom: 0.375rem; }
+    .metric-lbl { font-size: 0.8125rem; color: var(--muted); font-weight: 500; padding-bottom: 0.5rem; }
+
+    .testi-body { padding: 1.25rem 1.75rem 1.75rem; }
+    .testi-stars { color: var(--gold); font-size: 0.875rem; margin-bottom: 0.75rem; }
+    .testi-q { font-size: 0.9375rem; line-height: 1.72; color: var(--text2); margin-bottom: 1.25rem; font-style: italic; }
+    .testi-meta { display: flex; align-items: center; gap: 0.75rem; }
+    .testi-av {
+      width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+      background: var(--purple-dim); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Fraunces',serif; font-weight: 700; font-size: 0.9375rem; color: var(--purple-lt);
+    }
+    .testi-name { font-weight: 600; font-size: 0.875rem; }
+    .testi-cond { font-size: 0.8125rem; color: var(--muted); }
+
+    /* ═══════════════════════════════════════════
+       OFFER / PROGRAM
+    ═══════════════════════════════════════════ */
+    #offer { background: var(--surface); }
+    .offer-card {
+      max-width: 860px; margin: 0 auto;
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 20px; overflow: hidden;
+      box-shadow: var(--shadow-glow);
+    }
+    .offer-head {
+      background: linear-gradient(135deg, var(--surface) 0%, var(--card2) 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 3rem 2.5rem; text-align: center;
+    }
+    .offer-hl { font-size: clamp(1.75rem, 3vw, 2.5rem); margin: 0.75rem 0; }
+    .offer-desc { color: var(--text2); font-size: 0.9375rem; max-width: 440px; margin: 0 auto; }
+
+    .offer-body { padding: 2.75rem; }
+    .inc-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.625rem; }
+    .inc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.25rem; }
+    .inc-row { display: flex; align-items: center; gap: 0.75rem; }
+    .inc-check {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: rgba(16,185,129,0.12); border: 1.5px solid var(--green);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .inc-check svg { width: 11px; height: 11px; }
+    .inc-row span { font-size: 0.9375rem; font-weight: 500; }
+    .offer-div { height: 1px; background: var(--border2); margin: 0 0 2.25rem; }
+    .offer-cta { text-align: center; }
+    .offer-cta-note { color: var(--muted); font-size: 0.9rem; margin-bottom: 1.375rem; line-height: 1.6; }
+    .offer-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+
+    /* ═══════════════════════════════════════════
+       FINAL CTA
+    ═══════════════════════════════════════════ */
+    #final-cta { background: var(--bg); position: relative; overflow: hidden; }
+    #final-cta::before {
+      content: ''; position: absolute; bottom: -20%; right: -10%;
+      width: 60%; height: 80%;
+      background: radial-gradient(ellipse, rgba(99,102,241,0.15) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    #final-cta::after {
+      content: ''; position: absolute; top: -20%; left: -10%;
+      width: 50%; height: 70%;
+      background: radial-gradient(ellipse, rgba(139,92,246,0.1) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .fcta-in {
+      max-width: 760px; margin: 0 auto; text-align: center;
+      position: relative; z-index: 1;
+    }
+    .fcta-hl { font-size: clamp(2.25rem, 5vw, 4rem); margin-bottom: 1.25rem; }
+    .fcta-hl em { font-style: italic; color: var(--purple-lt); }
+    .fcta-sub { color: var(--text2); font-size: 1.0625rem; max-width: 520px; margin: 0 auto 2.5rem; line-height: 1.78; }
+    .fcta-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .fcta-note { font-size: 0.8125rem; color: var(--muted); }
+    .fcta-note strong { color: var(--purple-lt); }
+
+    /* ═══════════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════════ */
+    footer {
+      background: var(--surface);
+      border-top: 1px solid var(--border2);
+      padding: 2rem;
+    }
+    .foot-in {
+      max-width: var(--max); margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .foot-brand { font-size: 0.875rem; color: var(--muted); }
+    .foot-brand strong { color: var(--text2); }
+    .foot-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .foot-links a { font-size: 0.8125rem; color: var(--muted); transition: color .2s; }
+    .foot-links a:hover { color: var(--text); }
+
+    /* ═══════════════════════════════════════════
+       SCROLL ANIMATIONS
+    ═══════════════════════════════════════════ */
+    .fade-up {
+      opacity: 0; transform: translateY(28px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .fade-up.in { opacity: 1; transform: translateY(0); }
+    .d1 { transition-delay: .1s; }
+    .d2 { transition-delay: .2s; }
+    .d3 { transition-delay: .3s; }
+    .d4 { transition-delay: .4s; }
+
+    /* ═══════════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .cond-grid { grid-template-columns: repeat(3,1fr); }
+      .about-grid { grid-template-columns: 380px 1fr; gap: 3rem; }
+    }
+    @media (max-width: 900px) {
+      .nav-links, .nav-cta-d { display: none; }
+      .hamburger { display: flex; }
+      .hero-in { grid-template-columns: 1fr; }
+      .hero-photo-wrap { max-width: 340px; margin: 0 auto; }
+      .float-badge-1 { right: 0; }
+      .float-badge-2 { left: 0; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-photo-box { max-width: 360px; }
+      .cond-grid { grid-template-columns: repeat(2,1fr); }
+      .how-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .fail-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .inc-grid { grid-template-columns: 1fr; }
+      .trust-grid { grid-template-columns: repeat(2,1fr); }
+    }
+    @media (max-width: 600px) {
+      .sec { padding: 4rem 1.25rem; }
+      .hero-in { padding: 3rem 1.25rem; }
+      .cond-grid { grid-template-columns: 1fr 1fr; }
+      .hero-ctas, .fcta-btns, .offer-btns { flex-direction: column; align-items: stretch; }
+      .hero-ctas .btn, .fcta-btns .btn, .offer-btns .btn { width: 100%; }
+      .trust-n { font-size: 1.875rem; }
+      .hero-hl { letter-spacing: -0.02em; }
+      .cred-grid { grid-template-columns: 1fr; }
+      .offer-body { padding: 1.75rem 1.25rem; }
+      .offer-head { padding: 2rem 1.25rem; }
+      .trans-card { flex: 0 0 280px; }
+      .metric-n { font-size: 2.75rem; }
+    }
+
+    /* ═══════════════════════════════════════════
+       REDUCE MOTION
+    ═══════════════════════════════════════════ */
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up { transition: none; opacity: 1; transform: none; }
+      .float-badge { animation: none; }
+      .badge-dot { animation: none; }
+      * { scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ════════ NAV ════════ -->
+<nav id="nav">
+  <div class="nav-in">
+    <div class="nav-logo">
+      <div class="logo-mark">S</div>
+      <span class="logo-name">FatLoss <span>with Sahil</span></span>
+    </div>
+
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#conditions">Conditions</a>
+      <a href="#how">How It Works</a>
+      <a href="#transformations">Results</a>
+      <a href="#offer">Program</a>
+    </div>
+
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+      <div class="theme-toggle-thumb">
+        <span id="theme-icon">🌙</span>
+      </div>
+    </button>
+
+    <button class="btn btn-purple nav-cta-d" onclick="openCalendly()" style="display:inline-flex;">Book a Free Call</button>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div id="mob-menu">
+  <a href="#about"           onclick="closeMenu()">About Sahil</a>
+  <a href="#conditions"      onclick="closeMenu()">Conditions</a>
+  <a href="#how"             onclick="closeMenu()">How It Works</a>
+  <a href="#transformations" onclick="closeMenu()">Results</a>
+  <a href="#offer"           onclick="closeMenu()">Program</a>
+  <button class="btn btn-purple btn-lg" onclick="openCalendly();closeMenu()">Book a Free Call</button>
+</div>
+
+<!-- ════════ HERO ════════ -->
+<section id="hero">
+  <div class="hero-bg-glow"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-in">
+    <!-- LEFT: TEXT -->
+    <div>
+      <div class="hero-badge fade-up">
+        <span class="badge-dot"></span>
+        <span class="badge-txt">Health Transformation Coaching · FLS</span>
+      </div>
+
+      <h1 class="hero-hl fade-up d1">
+        <span class="line">I was</span>
+        <span class="line line-indent"><em>113 kg.</em></span>
+        <span class="line thin">Then I learned</span>
+        <span class="line line-indent"><em>exactly why —</em></span>
+        <span class="line">and fixed it.</span>
+      </h1>
+
+      <p class="hero-sub fade-up d2">
+        I'm Sahil — a Clinical Exercise Scientist who lost 50 kg and built a coaching system around bloodwork, real data, and your specific health conditions. Not generic plans. Not crash diets. Just science that works.
+      </p>
+
+      <div class="hero-quals fade-up d2">
+        <span class="qual"><span class="qual-icon">🎓</span> Clinical Exercise Science</span>
+        <span class="qual"><span class="qual-icon">🩸</span> Bloodwork-Guided Nutrition</span>
+        <span class="qual"><span class="qual-icon">⚕️</span> PCOD · Thyroid · Fatty Liver</span>
+        <span class="qual"><span class="qual-icon">💪</span> 50 kg Lost Personally</span>
+        <span class="qual"><span class="qual-icon">👥</span> 100+ Clients Transformed</span>
+      </div>
+
+      <div class="hero-ctas fade-up d3">
+        <button class="btn btn-purple btn-lg" onclick="openCalendly()">
+          Book a Free Call
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <a href="#transformations" class="btn btn-ghost btn-lg">See Transformations</a>
+      </div>
+
+      <div class="hero-tags fade-up">
+        <span class="htag">PCOD / PCOS</span>
+        <span class="htag">Fatty Liver</span>
+        <span class="htag">Thyroid</span>
+        <span class="htag">High BP</span>
+        <span class="htag">Type 2 Diabetes</span>
+        <span class="htag">Low Energy</span>
+        <span class="htag">Stubborn Fat</span>
+      </div>
+    </div>
+
+    <!-- RIGHT: PHOTO -->
+    <div class="hero-photo-wrap fade-up d2">
+      <div class="hero-photo-box">
+        <!--
+          REPLACE THIS IMG SRC WITH YOUR ACTUAL PHOTO.
+          Place your photo at: /static/sahil.jpg
+          Then change src below to: src="/static/sahil.jpg"
+        -->
+        <img
+                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=750&fit=crop&crop=faces,center"
+                alt="Sahil – Health Transformation Coach"
+                loading="eager"
+        >
+        <div class="hero-photo-overlay"></div>
+      </div>
+
+      <!-- floating credential badges -->
+      <div class="float-badge float-badge-1">
+        <div class="fb-num">50 kg</div>
+        <div class="fb-lbl">Lost personally</div>
+      </div>
+      <div class="float-badge float-badge-2">
+        <div class="fb-num">100+</div>
+        <div class="fb-lbl">Clients transformed</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ TRUST BAR ════════ -->
+<div id="trust">
+  <div class="trust-grid">
+    <div class="trust-item fade-up">
+      <div class="trust-n">50 kg</div>
+      <div class="trust-l">Lost by Sahil personally</div>
+    </div>
+    <div class="trust-item fade-up d1">
+      <div class="trust-n">100+</div>
+      <div class="trust-l">Clients transformed</div>
+    </div>
+    <div class="trust-item fade-up d2">
+      <div class="trust-n">5–8 kg</div>
+      <div class="trust-l">Average client fat loss</div>
+    </div>
+    <div class="trust-item fade-up d3">
+      <div class="trust-n">0</div>
+      <div class="trust-l">Crash diets. Ever.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ ABOUT SAHIL ════════ -->
+<section id="about" class="sec">
+  <div class="sec-in">
+    <div class="about-grid">
+
+      <!-- PHOTO -->
+      <div class="fade-up">
+        <div class="about-photo-box">
+          <!--
+            REPLACE SRC with /static/sahil-about.jpg
+            or reuse the same photo: /static/sahil.jpg
+          -->
+          <img
+                  src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=780&fit=crop&crop=faces,top"
+                  alt="Sahil – Health Transformation Coach"
+          >
+          <div class="about-photo-badge">
+            <div class="apb-n">50 kg</div>
+            <div class="apb-l">lost personally</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTENT -->
+      <div>
+        <div class="eyebrow eyebrow-purple fade-up">Meet your coach</div>
+
+        <h2 class="about-hl fade-up d1">
+          I've been <em>exactly</em><br>where you are.
+        </h2>
+
+        <p class="about-p fade-up d1">
+          At my heaviest, I was 113 kg. I tried generic diets and random workout plans — they'd work for a while, then fail completely. I was frustrated, exhausted, and had no idea why my body wasn't responding the way it should.
+        </p>
+        <p class="about-p fade-up d2">
+          Then I went back to school. Clinical Exercise Science gave me the framework I was missing. I started reading bloodwork, understanding hormones, mapping lifestyle diseases to fat storage. I lost 50 kg — not through willpower, but through understanding.
+        </p>
+        <p class="about-p fade-up d2">
+          Now I build personalised plans for people with PCOD, fatty liver, thyroid disorders, high BP, and type 2 diabetes. People who've tried everything else. People like you.
+        </p>
+
+        <div class="cred-grid fade-up d3">
+          <div class="cred-tile">
+            <div class="cred-icon">🎓</div>
+            <div>
+              <div class="cred-name">Clinical Exercise Science</div>
+              <div class="cred-desc">Formal training in exercise physiology & clinical nutrition</div>
+            </div>
+          </div>
+          <div class="cred-tile">
+            <div class="cred-icon">🩸</div>
+            <div>
+              <div class="cred-name">Bloodwork-Guided Approach</div>
+              <div class="cred-desc">Nutrition plans built from your actual lab results, not guesses</div>
+            </div>
+          </div>
+          <div class="cred-tile">
+            <div class="cred-icon">⚕️</div>
+            <div>
+              <div class="cred-name">Lifestyle Disease Expert</div>
+              <div class="cred-desc">Specialist in PCOD, thyroid, fatty liver, diabetes, high BP</div>
+            </div>
+          </div>
+          <div class="cred-tile">
+            <div class="cred-icon">🏆</div>
+            <div>
+              <div class="cred-name">100+ Transformations</div>
+              <div class="cred-desc">Real clients, verified results, bloodwork before &amp; after</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ HEALTH CONDITIONS ════════ -->
+<section id="conditions" class="sec">
+  <div class="sec-in">
+    <div class="cond-hd fade-up">
+      <div class="chip">Health Conditions</div>
+      <h2 class="cond-hl">Personalised coaching for <span>15+ conditions</span> — from PCOD to diabetes and beyond.</h2>
+      <p class="cond-sub">Whether you're managing a chronic condition or chasing a health goal, Sahil's system is built to help.</p>
+    </div>
+
+    <div class="cond-grid">
+      <div class="cond-card fade-up">
+        <div class="cond-card-icon">⚖️</div>
+        <h3>Weight Management</h3>
+        <p>Sustainable fat loss through personalised diet and movement plans</p>
+      </div>
+      <div class="cond-card fade-up d1">
+        <div class="cond-card-icon">🌸</div>
+        <h3>PCOS / PCOD</h3>
+        <p>Hormone-friendly nutrition and lifestyle correction for hormonal balance</p>
+      </div>
+      <div class="cond-card fade-up d2">
+        <div class="cond-card-icon">🍬</div>
+        <h3>Diabetes</h3>
+        <p>Blood sugar control through bloodwork-guided personalised diet coaching</p>
+      </div>
+      <div class="cond-card fade-up d3">
+        <div class="cond-card-icon">🦋</div>
+        <h3>Thyroid</h3>
+        <p>Diet and routine optimisation for hypo- and hyperthyroid conditions</p>
+      </div>
+      <div class="cond-card fade-up">
+        <div class="cond-card-icon">🫀</div>
+        <h3>Heart Health</h3>
+        <p>Cholesterol and BP management through evidence-based diet coaching</p>
+      </div>
+      <div class="cond-card fade-up d1">
+        <div class="cond-card-icon">🫁</div>
+        <h3>Fatty Liver</h3>
+        <p>Targeted nutrition protocols to reduce liver fat and improve enzymes</p>
+      </div>
+      <div class="cond-card fade-up d2">
+        <div class="cond-card-icon">🧠</div>
+        <h3>Mental Health</h3>
+        <p>Gut-brain nutrition, stress management, and mindful eating habits</p>
+      </div>
+      <div class="cond-card fade-up d3">
+        <div class="cond-card-icon">🌙</div>
+        <h3>Sleep Health</h3>
+        <p>Routines and nutrition strategies to improve sleep quality and recovery</p>
+      </div>
+      <div class="cond-card fade-up">
+        <div class="cond-card-icon">💆</div>
+        <h3>Digestive Health</h3>
+        <p>Gut-friendly nutrition for IBS, acidity, bloating, and dysbiosis</p>
+      </div>
+      <div class="cond-card fade-up d1">
+        <div class="cond-card-icon">🤰</div>
+        <h3>Pregnancy</h3>
+        <p>Trimester-wise nutrition and prenatal wellness support</p>
+      </div>
+      <div class="cond-card fade-up d2">
+        <div class="cond-card-icon">✨</div>
+        <h3>Hair &amp; Skin</h3>
+        <p>Nutrition-based care for hair fall, skin conditions, and nutrient deficiencies</p>
+      </div>
+      <div class="cond-card cond-card-more fade-up d3">
+        <div class="cond-more-n">+100</div>
+        <div class="cond-more-l">Sexual health, postpartum, autoimmune &amp; more</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ HOW IT WORKS ════════ -->
+<section id="how" class="sec">
+  <div class="sec-in">
+    <div class="how-grid">
+      <!-- LEFT: Heading -->
+      <div>
+        <div class="eyebrow eyebrow-purple fade-up">How it works</div>
+        <h2 class="how-hd-hl fade-up d1">From first call to <em>first results</em> — here's the path.</h2>
+        <p class="how-hd-p fade-up d2">No guesswork. No generic templates. Every step is designed around you — your bloodwork, your lifestyle, your health history.</p>
+      </div>
+
+      <!-- RIGHT: Numbered steps -->
+      <div class="steps-list fade-up d1">
+        <div class="step-item">
+          <div class="step-left">
+            <div class="step-num-circle">01</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-body">
+            <div class="step-title">Book a Free Discovery Call</div>
+            <div class="step-desc">A 30-minute conversation where I understand your goals, health history, current routine, and what you've tried before. Zero pressure.</div>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-left">
+            <div class="step-num-circle">02</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-body">
+            <div class="step-title">Share Your Health Details</div>
+            <div class="step-desc">Your measurements, current medications, recent bloodwork (if available), and lifestyle habits. The more I know, the better your plan.</div>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-left">
+            <div class="step-num-circle">03</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-body">
+            <div class="step-title">Receive Your Personalised Plan</div>
+            <div class="step-desc">A complete nutrition plan, workout programme, supplement guidance, and bloodwork review — built specifically for your body and conditions.</div>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-left">
+            <div class="step-num-circle">04</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-body">
+            <div class="step-title">Weekly Check-ins &amp; Accountability</div>
+            <div class="step-desc">Regular progress reviews, plan adjustments, daily WhatsApp check-ins, and habit tracking to keep you consistent and on course.</div>
+          </div>
+        </div>
+
+        <div class="step-item">
+          <div class="step-left">
+            <div class="step-num-circle">05</div>
+            <div class="step-line"></div>
+          </div>
+          <div class="step-body">
+            <div class="step-title">Transform in 90 Days</div>
+            <div class="step-desc">Visible fat loss, better bloodwork, improved energy, and habits that stay with you long after the programme ends.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ 90-DAY VISION ════════ -->
+<section id="vision" class="sec">
+  <div class="sec-in">
+    <div class="vision-in">
+      <div class="eyebrow eyebrow-purple fade-up" style="justify-content:center;">Your 90-day future</div>
+      <h2 class="vision-hl fade-up d1">Imagine where you could be <em>90 days from now…</em></h2>
+      <div class="vision-pills fade-up d2">
+        <div class="vpill"><span class="vpill-check">✓</span> 5–8 kg lighter</div>
+        <div class="vpill"><span class="vpill-check">✓</span> Clothes that fit again</div>
+        <div class="vpill"><span class="vpill-check">✓</span> Bloodwork improving</div>
+        <div class="vpill"><span class="vpill-check">✓</span> Stronger in the gym</div>
+        <div class="vpill"><span class="vpill-check">✓</span> Energy all day long</div>
+        <div class="vpill"><span class="vpill-check">✓</span> No more fear of food</div>
+        <div class="vpill"><span class="vpill-check">✓</span> You understand your body</div>
+        <div class="vpill"><span class="vpill-check">✓</span> Sustainable habits</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ BEFORE / AFTER CAROUSEL ════════ -->
+<section id="transformations" class="sec">
+  <div class="sec-in">
+    <div class="trans-hd">
+      <div class="eyebrow eyebrow-purple fade-up">Real Transformations</div>
+      <h2 class="trans-hl fade-up d1">Before &amp; After. <em>Real people.</em><br>Real results.</h2>
+      <p class="trans-sub fade-up d2">From bloodwork improvements to visible fat loss — here's what 90 days of the right plan can do.</p>
+    </div>
+
+    <div class="carousel-track-wrap fade-up d1">
+      <div class="carousel-track" id="carousel">
+
+        <!-- CARD 1 -->
+        <div class="trans-card">
+          <div class="ba-split">
+            <div class="ba-before">
+              <!--
+                REPLACE with actual before photo:
+                <img src="/static/transformations/priya-before.jpg" alt="Priya before">
+              -->
+              <div class="ba-img-placeholder" style="background:linear-gradient(135deg,#1a1a1a,#2a2a2a);">
+                <div class="bap-icon">📷</div>
+                <div class="bap-txt" style="color:rgba(255,255,255,0.4);">Add before photo</div>
+              </div>
+              <span class="ba-label">Before</span>
+            </div>
+            <div class="ba-after">
+              <!--
+                REPLACE with actual after photo:
+                <img src="/static/transformations/priya-after.jpg" alt="Priya after">
+              -->
+              <div class="ba-img-placeholder" style="background:linear-gradient(135deg,rgba(99,102,241,0.4),rgba(139,92,246,0.6));">
+                <div class="bap-icon">✨</div>
+                <div class="bap-txt" style="color:rgba(255,255,255,0.7);">Add after photo</div>
+              </div>
+              <span class="ba-label">After</span>
+            </div>
+            <div class="ba-divider"></div>
+            <div class="ba-stat">−7 kg in 90 days</div>
+          </div>
+          <div class="trans-body">
+            <div class="trans-stars">★★★★★</div>
+            <div class="trans-name">Priya M.</div>
+            <div class="trans-detail">PCOD Management · 90-day Programme</div>
+            <p class="trans-q">"Lost 7 kg, improved energy, and finally understood what works for my body. Sahil's plan was different from anything I'd tried before."</p>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="trans-card">
+          <div class="ba-split">
+            <div class="ba-before">
+              <div class="ba-img-placeholder" style="background:linear-gradient(135deg,#1a1a1a,#2a2a2a);">
+                <div class="bap-icon">📷</div>
+                <div class="bap-txt" style="color:rgba(255,255,255,0.4);">Add before photo</div>
+              </div>
+              <span class="ba-label">Before</span>
+            </div>
+            <div class="ba-after">
+              <div class="ba-img-placeholder" style="background:linear-gradient(135deg,rgba(16,185,129,0.3),rgba(99,102,241,0.5));">
+                <div class="bap-icon">✨</div>
+                <div class="bap-txt" style="color:rgba(255,255,255,0.7);">Add after photo</div>
+              </div>
+              <span class="ba-label">After</span>
+            </div>
+            <div class="ba-divider"></div>
+            <div class="ba-stat">−8 kg · Fatty Liver improved</div>
+          </div>
+          <div class="trans-body">
+            <div class="trans-stars">★★★★★</div>
+            <div class="trans-name">Rahul S.</div>
+            <div class="trans-detail">Fatty Liver · 90-day Programme</div>
+            <p class="trans-q">"My fatty liver score improved in 90 days. I had more energy than I've had in years and lost 8 kg without feeling starved."</p>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="trans-card">
+          <div class="ba-split">
+            <div class="ba-before">
+              <div class="ba-img-placeholder" style="background:linear-gradient(135deg,#1a1a1a,#2a2a2a);">
+                <div class="bap-icon">📷</div>
+                <div class="bap-txt" style="color:rgba(255,255,255,0.4);">Add before photo</div>
+              </div>
+              <span class="ba-label">Before</span>
+            </div>
+            <div class="ba-after">
+              <div class="ba-img-placeholder" style="background:linear-gradient(135deg,rgba(245,158,11,0.3),rgba(139,92,246,0.5));">
+                <div class="bap-icon">✨</div>
+                <div class="bap-txt" style="color:rgba(255,255,255,0.7);">Add after photo</div>
+              </div>
+              <span class="ba-label">After</span>
+            </div>
+            <div class="ba-divider"></div>
+            <div class="ba-stat">−6 kg · Thyroid stabilised</div>
+          </div>
+          <div class="trans-body">
+            <div class="trans-stars">★★★★★</div>
+            <div class="trans-name">Anjali K.</div>
+            <div class="trans-detail">Thyroid Management · 90-day Programme</div>
+            <p class="trans-q">"My thyroid levels stabilised and I dropped 6 kg. The bloodwork-first approach made all the difference — real progress, no crash diets."</p>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="trans-card">
+          <div class="ba-split">
+            <div class="ba-before">
+              <div class="ba-img-placeholder" style="background:linear-gradient(135deg,#1a1a1a,#2a2a2a);">
+                <div class="bap-icon">📷</div>
+                <div class="bap-txt" style="color:rgba(255,255,255,0.4);">Add before photo</div>
+              </div>
+              <span class="ba-label">Before</span>
+            </div>
+            <div class="ba-after">
+              <div class="ba-img-placeholder" style="background:linear-gradient(135deg,rgba(99,102,241,0.3),rgba(16,185,129,0.4));">
+                <div class="bap-icon">✨</div>
+                <div class="bap-txt" style="color:rgba(255,255,255,0.7);">Add after photo</div>
+              </div>
+              <span class="ba-label">After</span>
+            </div>
+            <div class="ba-divider"></div>
+            <div class="ba-stat">−5.5 kg · BP normalised</div>
+          </div>
+          <div class="trans-body">
+            <div class="trans-stars">★★★★★</div>
+            <div class="trans-name">Vikram T.</div>
+            <div class="trans-detail">High BP · 90-day Programme</div>
+            <p class="trans-q">"Blood pressure came down without medication. Lost 5.5 kg and my doctor was genuinely surprised at my 3-month bloodwork report."</p>
+          </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="trans-card">
+          <div class="ba-split">
+            <div class="ba-before">
+              <div class="ba-img-placeholder" style="background:linear-gradient(135deg,#1a1a1a,#2a2a2a);">
+                <div class="bap-icon">📷</div>
+                <div class="bap-txt" style="color:rgba(255,255,255,0.4);">Add before photo</div>
+              </div>
+              <span class="ba-label">Before</span>
+            </div>
+            <div class="ba-after">
+              <div class="ba-img-placeholder" style="background:linear-gradient(135deg,rgba(139,92,246,0.4),rgba(245,158,11,0.35));">
+                <div class="bap-icon">✨</div>
+                <div class="bap-txt" style="color:rgba(255,255,255,0.7);">Add after photo</div>
+              </div>
+              <span class="ba-label">After</span>
+            </div>
+            <div class="ba-divider"></div>
+            <div class="ba-stat">−7.5 kg · HbA1c improved</div>
+          </div>
+          <div class="trans-body">
+            <div class="trans-stars">★★★★★</div>
+            <div class="trans-name">Deepa R.</div>
+            <div class="trans-detail">Type 2 Diabetes · 90-day Programme</div>
+            <p class="trans-q">"HbA1c dropped from 8.1 to 6.3. Lost 7.5 kg and have more energy than my 30s. The plan was sustainable from day one."</p>
+          </div>
+        </div>
+
+      </div><!-- /carousel-track -->
+
+      <div class="carousel-controls">
+        <div class="carousel-dots" id="carousel-dots"></div>
+        <div class="carousel-btns">
+          <button class="carousel-btn" id="btn-prev" onclick="carouselPrev()" aria-label="Previous">←</button>
+          <button class="carousel-btn" id="btn-next" onclick="carouselNext()" aria-label="Next">→</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FAILURE AVOIDANCE ════════ -->
+<section id="failure" class="sec">
+  <div class="sec-in">
+    <div class="fail-grid">
+      <div>
+        <div class="eyebrow eyebrow-purple fade-up">The cost of doing nothing</div>
+        <h2 class="fail-hl fade-up d1">Without the right plan, most people keep repeating the same cycle.</h2>
+        <p class="fail-p fade-up d2">The problem isn't willpower. It's that generic plans aren't built for your specific health conditions, bloodwork, or lifestyle.</p>
+        <div class="cycle-box fade-up d2">
+          <span class="cy-item">Diet</span>
+          <span class="cy-arrow">→</span>
+          <span class="cy-item">Lose some weight</span>
+          <span class="cy-arrow">→</span>
+          <span class="cy-item">Quit</span>
+          <span class="cy-arrow">→</span>
+          <span class="cy-item">Regain</span>
+          <span class="cy-arrow">→</span>
+          <span class="cy-item cy-end">Feel guilty</span>
+          <span class="cy-arrow">→</span>
+          <span class="cy-item">Repeat</span>
+        </div>
+      </div>
+
+      <div class="promise-card fade-up d1">
+        <p class="promise-title">This programme is built to break that cycle.</p>
+        <div class="promise-list">
+          <div class="promise-row">
+            <div class="p-check">✓</div>
+            <span>A plan built around your specific health conditions — not a template for everyone</span>
+          </div>
+          <div class="promise-row">
+            <div class="p-check">✓</div>
+            <span>Bloodwork-guided approach that fixes root causes, not just calories</span>
+          </div>
+          <div class="promise-row">
+            <div class="p-check">✓</div>
+            <span>Daily accountability so you don't drift after two weeks</span>
+          </div>
+          <div class="promise-row">
+            <div class="p-check">✓</div>
+            <span>Sustainable habits that outlast the programme — so results actually stay</span>
+          </div>
+          <div class="promise-row">
+            <div class="p-check">✓</div>
+            <span>No crash diets, no extreme restriction — just a plan your body can sustain</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ TESTIMONIALS ════════ -->
+<section id="results" class="sec">
+  <div class="sec-in">
+    <div class="res-hd fade-up">
+      <div class="eyebrow eyebrow-purple">Client results</div>
+      <h2 class="res-hl">Real numbers. <em>Real people.</em></h2>
+      <p class="res-sub">From bloodwork improvements to visible fat loss — here's what's possible in 90 days.</p>
+    </div>
+
+    <div class="testi-grid">
+      <div class="testi-card fade-up">
+        <div class="testi-metric">
+          <div class="metric-n">7</div>
+          <div class="metric-unit">kg</div>
+          <div class="metric-lbl">lost in 90 days</div>
+        </div>
+        <div class="testi-body">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-q">"Lost 7 kg, improved energy, and finally understood what works for my body. Sahil's plan was different from anything I'd tried before."</p>
+          <div class="testi-meta">
+            <div class="testi-av">P</div>
+            <div>
+              <div class="testi-name">Priya M.</div>
+              <div class="testi-cond">PCOD management</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card fade-up d1">
+        <div class="testi-metric">
+          <div class="metric-n">8</div>
+          <div class="metric-unit">kg</div>
+          <div class="metric-lbl">lost · fatty liver improved</div>
+        </div>
+        <div class="testi-body">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-q">"My fatty liver score improved in 90 days. I had more energy than I've had in years and lost 8 kg without feeling starved."</p>
+          <div class="testi-meta">
+            <div class="testi-av">R</div>
+            <div>
+              <div class="testi-name">Rahul S.</div>
+              <div class="testi-cond">Fatty liver improvement</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card fade-up d2">
+        <div class="testi-metric">
+          <div class="metric-n">6</div>
+          <div class="metric-unit">kg</div>
+          <div class="metric-lbl">lost · thyroid stabilised</div>
+        </div>
+        <div class="testi-body">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-q">"My thyroid levels stabilised and I dropped 6 kg. The bloodwork-first approach made all the difference — no crash diets, just real progress."</p>
+          <div class="testi-meta">
+            <div class="testi-av">A</div>
+            <div>
+              <div class="testi-name">Anjali K.</div>
+              <div class="testi-cond">Thyroid management</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ OFFER ════════ -->
+<section id="offer" class="sec">
+  <div class="sec-in">
+    <div class="offer-card fade-up">
+      <div class="offer-head">
+        <div class="chip">FLS Signature Programme</div>
+        <h2 class="offer-hl">Health Transformation Coaching</h2>
+        <p class="offer-desc">A personalised 90-day programme for people who want to lose fat and improve their health markers — for good.</p>
+      </div>
+      <div class="offer-body">
+        <p class="inc-label">Everything included</p>
+        <div class="inc-grid">
+          <div class="inc-row">
+            <div class="inc-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span>Custom diet plan</span>
+          </div>
+          <div class="inc-row">
+            <div class="inc-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span>Personalised workout programme</span>
+          </div>
+          <div class="inc-row">
+            <div class="inc-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span>Bloodwork review &amp; analysis</span>
+          </div>
+          <div class="inc-row">
+            <div class="inc-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span>Supplement guidance</span>
+          </div>
+          <div class="inc-row">
+            <div class="inc-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span>Weekly check-in calls</span>
+          </div>
+          <div class="inc-row">
+            <div class="inc-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span>Daily WhatsApp accountability</span>
+          </div>
+          <div class="inc-row">
+            <div class="inc-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span>Lifestyle &amp; habit tracking</span>
+          </div>
+          <div class="inc-row">
+            <div class="inc-check"><svg viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <span>Plan adjustments every week</span>
+          </div>
+        </div>
+        <div class="offer-div"></div>
+        <div class="offer-cta">
+          <p class="offer-cta-note">Book a free 30-minute discovery call, or message on WhatsApp to ask about pricing and current availability.</p>
+          <div class="offer-btns">
+            <button class="btn btn-purple btn-lg" onclick="openCalendly()">Book a Free Call</button>
+            <button class="btn btn-wa btn-lg" onclick="openWhatsApp()">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Ask on WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FINAL CTA ════════ -->
+<section id="final-cta" class="sec">
+  <div class="fcta-in">
+    <div class="eyebrow eyebrow-purple fade-up" style="justify-content:center;">Take the first step</div>
+    <h2 class="fcta-hl fade-up d1">Ready to <em>stop guessing?</em></h2>
+    <p class="fcta-sub fade-up d2">Get a clear plan, proper accountability, and a body that feels healthy again. Book a free 30-minute call — zero pressure, zero commitment.</p>
+    <div class="fcta-btns fade-up d2">
+      <button class="btn btn-purple btn-lg" onclick="openCalendly()">
+        Book Your Free Call
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button class="btn btn-wa btn-lg" onclick="openWhatsApp()">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Message on WhatsApp
+      </button>
+    </div>
+    <p class="fcta-note fade-up d3"><strong>Limited spots available each month.</strong> Spots fill up — don't put it off.</p>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <div class="foot-in">
+    <div class="foot-brand">
+      <strong>FatLoss With Sahil</strong> — Health Transformation Coaching
+    </div>
+    <nav class="foot-links" aria-label="Footer navigation">
+      <a href="#about">About</a>
+      <a href="#conditions">Conditions</a>
+      <a href="#how">How It Works</a>
+      <a href="#transformations">Results</a>
+      <a href="#offer">Programme</a>
+      <a href="javascript:void(0)" onclick="openCalendly()">Book a Call</a>
+    </nav>
+  </div>
+</footer>
+
+<!-- Calendly -->
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+<script>
+  /* ════════════════════════════════════════
+     ⚙️  UPDATE THESE BEFORE GOING LIVE
+  ════════════════════════════════════════ */
+  const CALENDLY_URL = 'https://calendly.com/fatlosswithsahil/coaching-call';
+  const WHATSAPP_NUM = '919999999999'; // e.g. India: 91 + 10-digit mobile
+  /* ════════════════════════════════════════ */
+
+  const WHATSAPP_MSG = encodeURIComponent(
+          "Hi Sahil! 👋 I'm interested in your health transformation coaching. Could you share the details on pricing and availability?"
+  );
+
+  function openCalendly() {
+    if (window.Calendly) {
+      Calendly.initPopupWidget({ url: CALENDLY_URL });
+    } else {
+      window.open(CALENDLY_URL, '_blank', 'noopener');
+    }
+    return false;
+  }
+
+  function openWhatsApp() {
+    window.open('https://wa.me/' + WHATSAPP_NUM + '?text=' + WHATSAPP_MSG, '_blank', 'noopener');
+  }
+
+  /* ── Theme toggle ── */
+  function toggleTheme() {
+    const html = document.documentElement;
+    const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    document.getElementById('theme-icon').textContent = next === 'dark' ? '🌙' : '☀️';
+    try { localStorage.setItem('fls-theme', next); } catch(e) {}
+  }
+  (function() {
+    try {
+      const saved = localStorage.getItem('fls-theme');
+      if (saved) {
+        document.documentElement.setAttribute('data-theme', saved);
+        const icon = document.getElementById('theme-icon');
+        if (icon) icon.textContent = saved === 'dark' ? '🌙' : '☀️';
+      }
+    } catch(e) {}
+  })();
+
+  /* ── Sticky nav ── */
+  const navbar = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  /* ── Mobile menu ── */
+  const mobMenu = document.getElementById('mob-menu');
+  function toggleMenu() { mobMenu.classList.toggle('open'); }
+  function closeMenu()  { mobMenu.classList.remove('open'); }
+  document.addEventListener('click', e => {
+    if (mobMenu.classList.contains('open')
+            && !mobMenu.contains(e.target)
+            && !e.target.closest('.hamburger')) {
+      closeMenu();
+    }
+  });
+
+  /* ── Scroll fade-up ── */
+  const fadeEls = document.querySelectorAll('.fade-up');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.1 });
+  fadeEls.forEach(el => io.observe(el));
+
+  /* ── Carousel ── */
+  const track = document.getElementById('carousel');
+  const dotsWrap = document.getElementById('carousel-dots');
+  const CARD_W = 340 + 24; // card width + gap
+  let currentIdx = 0;
+
+  function buildDots() {
+    const cards = track.querySelectorAll('.trans-card');
+    dotsWrap.innerHTML = '';
+    cards.forEach((_, i) => {
+      const d = document.createElement('button');
+      d.className = 'cdot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      d.onclick = () => goTo(i);
+      dotsWrap.appendChild(d);
+    });
+  }
+
+  function goTo(idx) {
+    const cards = track.querySelectorAll('.trans-card');
+    currentIdx = Math.max(0, Math.min(idx, cards.length - 1));
+    track.scrollTo({ left: currentIdx * CARD_W, behavior: 'smooth' });
+    dotsWrap.querySelectorAll('.cdot').forEach((d, i) => d.classList.toggle('active', i === currentIdx));
+  }
+
+  function carouselNext() { goTo(currentIdx + 1); }
+  function carouselPrev() { goTo(currentIdx - 1); }
+
+  // sync dots on manual scroll
+  let scrollTimer;
+  track.addEventListener('scroll', () => {
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => {
+      const idx = Math.round(track.scrollLeft / CARD_W);
+      currentIdx = idx;
+      dotsWrap.querySelectorAll('.cdot').forEach((d, i) => d.classList.toggle('active', i === idx));
+    }, 80);
+  }, { passive: true });
+
+  buildDots();
+
+  // Auto-advance
+  let autoTimer = setInterval(() => carouselNext(), 4000);
+  track.addEventListener('mouseenter', () => clearInterval(autoTimer));
+  track.addEventListener('mouseleave', () => { autoTimer = setInterval(() => carouselNext(), 4000); });
+</script>
+
+</body>
+</html>
