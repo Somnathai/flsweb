@@ -224,6 +224,7 @@
     /* progressive blur overlay (jhey "Craft of UI" technique) */
     .fw-blur { grid-area: 1 / 2; position: sticky; top: var(--nav-h); height: calc(100vh - var(--nav-h)); pointer-events: none; z-index: 6; }
     .fw-blur > div {
+      --i: 1;
       --blur: calc( sin(((var(--fw-layers) - var(--i)) / var(--fw-layers)) * 90deg) * var(--fw-blur-max) );
       --stop: calc( sin((var(--i) / var(--fw-layers)) * 90deg) * var(--fw-mask-stop) );
       position: absolute; inset: 0;
