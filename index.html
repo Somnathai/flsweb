@@ -11,9 +11,6 @@
   <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
   <style>
-    /* ═══════════════════════════════════════════
-       RESET & TOKENS
-    ═══════════════════════════════════════════ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; font-size: 16px; }
     img { max-width: 100%; display: block; object-fit: cover; }
@@ -78,7 +75,6 @@
     .sec     { padding: 6rem 1.5rem; }
     .sec-in  { max-width: var(--max); margin: 0 auto; }
 
-    /* BUTTONS */
     .btn {
       display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
       font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; font-weight: 600;
@@ -95,7 +91,6 @@
     .btn-wa { background: #25D366; color: #fff; }
     .btn-wa:hover { background: #1DB954; box-shadow: 0 8px 24px rgba(37,211,102,0.35); }
 
-    /* LABELS */
     .eyebrow {
       display: inline-flex; align-items: center; gap: 0.5rem;
       font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em;
@@ -110,7 +105,6 @@
       border: 1px solid var(--border); margin-bottom: 1.5rem;
     }
 
-    /* NAV */
     #nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 300;
       height: var(--nav-h); display: flex; align-items: center; padding: 0 2rem;
@@ -130,16 +124,21 @@
     .theme-toggle { width: 48px; height: 26px; border-radius: 13px; background: var(--card2); border: 1px solid var(--border); position: relative; cursor: pointer; flex-shrink: 0; transition: background 0.3s; }
     .theme-toggle-thumb { position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: var(--purple); display: flex; align-items: center; justify-content: center; font-size: 0.625rem; transition: transform 0.3s, background 0.3s; }
     [data-theme="light"] .theme-toggle-thumb { transform: translateX(22px); }
-    /* FITTR-style expert pill on the nav CTA */
     .nav-pill { display: flex; align-items: center; gap: 0.875rem; background: var(--card2); border: 1px solid var(--border); border-radius: 100px; padding: 5px 5px 5px 1.125rem; }
     .nav-pill .expert { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8125rem; font-weight: 600; color: var(--text2); white-space: nowrap; }
     .nav-pill .expert svg { width: 16px; height: 16px; color: var(--purple-lt); }
     .nav-pill .btn { padding: 0.6rem 1.25rem; font-size: 0.875rem; }
-    .hamburger { display: none; flex-direction: column; gap: 5px; padding: 4px; }
-    .hamburger span { display: block; width: 22px; height: 2px; background: var(--text2); border-radius: 2px; transition: .25s; }
-    #mob-menu { display: none; position: fixed; top: var(--nav-h); left: 0; right: 0; z-index: 299; background: var(--surface); backdrop-filter: blur(20px); padding: 2rem; flex-direction: column; gap: 1.25rem; border-top: 1px solid var(--border2); }
-    #mob-menu.open { display: flex; }
-    #mob-menu a { font-size: 1.0625rem; color: var(--text2); font-weight: 500; padding: 0.5rem 0; border-bottom: 1px solid var(--border2); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; padding: 4px; z-index: 320; position: relative; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: transform .3s ease, opacity .25s ease; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    #mob-menu { position: fixed; inset: 0; z-index: 310; background: rgba(0,0,0,0.55); -webkit-backdrop-filter: blur(22px); backdrop-filter: blur(22px); padding: calc(var(--nav-h) + 1.5rem) 2rem 2rem; display: flex; flex-direction: column; gap: 0.25rem; opacity: 0; visibility: hidden; transform: translateY(-12px); transition: opacity .3s ease, transform .3s ease, visibility .3s; }
+    [data-theme="light"] #mob-menu { background: rgba(255,255,255,0.6); }
+    #mob-menu.open { opacity: 1; visibility: visible; transform: translateY(0); }
+    #mob-menu a { font-size: 1.375rem; font-family: 'Fraunces', serif; font-weight: 700; color: var(--text); padding: 1rem 0; border-bottom: 1px solid var(--border2); }
+    #mob-menu .btn { margin-top: 1.5rem; }
+    body.menu-open { overflow: hidden; }
 
     /* ═══ 1. HERO ═══ */
     #hero { background: var(--bg); min-height: 100vh; display: flex; align-items: center; padding-top: var(--nav-h); position: relative; overflow: hidden; }
@@ -210,18 +209,15 @@
     .fw-hl { font-size: clamp(2rem, 3.5vw, 3rem); }
     .fw-hl em { font-style: italic; color: var(--purple-lt); }
     .fw-wrap { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: minmax(240px, 320px) 1fr; gap: 3rem; }
-    /* left: sticky framework steps */
     .fw-sticky { grid-area: 1 / 1; position: sticky; top: var(--nav-h); height: fit-content; min-height: calc(100vh - var(--nav-h)); display: flex; flex-direction: column; justify-content: center; z-index: 5; }
     .fw-steps { list-style: none; margin: 1.25rem 0 0; padding: 0; display: flex; flex-direction: column; gap: 1.1rem; }
     .fw-step { display: flex; gap: 0.9rem; align-items: flex-start; }
     .fw-step .n { font-family: 'Fraunces',serif; font-weight: 900; font-size: 1.1rem; color: #fff; background: var(--purple); width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center; flex-shrink: 0; box-shadow: 0 0 16px rgba(225,29,42,.4); }
     .fw-step h3 { font-family: 'DM Sans',sans-serif; font-size: 1rem; font-weight: 700; margin: 0 0 0.15rem; }
     .fw-step p { font-size: 0.85rem; color: var(--muted); line-height: 1.5; margin: 0; }
-    /* right: scrolling image column */
     .fw-images { grid-area: 1 / 2; list-style: none; margin: 0; padding: 0; padding-block: calc(50vh - (var(--fw-img) * 0.62)); display: flex; flex-direction: column; gap: 5.5rem; align-items: center; }
     .fw-images li { width: var(--fw-img); aspect-ratio: 4/5; }
     .fw-images img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; border: 1px solid var(--border2); filter: contrast(1.06) saturate(1.05) grayscale(0.15); box-shadow: var(--shadow-card); }
-    /* progressive blur overlay (jhey "Craft of UI" technique) */
     .fw-blur { grid-area: 1 / 2; position: sticky; top: var(--nav-h); height: calc(100vh - var(--nav-h)); pointer-events: none; z-index: 6; }
     .fw-blur > div {
       --i: 1;
@@ -256,7 +252,9 @@
     .trans-hl { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: 0.75rem; }
     .trans-hl em { font-style: italic; color: var(--purple-lt); }
 
-    /* — auto-scrolling marquee of hover-reveal cards — */
+    .trans-arrows { display: flex; justify-content: flex-end; gap: 0.6rem; margin-top: 1.25rem; margin-bottom: 1.75rem; max-width: var(--max); margin-left: auto; margin-right: auto; padding: 0 1.5rem; }
+    .trans-arrows button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--border); background: transparent; color: var(--text); font-size: 1.25rem; cursor: pointer; display: grid; place-items: center; transition: background .2s, border-color .2s; }
+    .trans-arrows button:hover { background: var(--purple-dim); border-color: var(--purple-lt); }
     .trans-marquee {
       overflow: hidden; position: relative; margin-bottom: 3rem;
       -webkit-mask: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
@@ -265,11 +263,11 @@
     .trans-track {
       display: flex; width: max-content;
       animation: flyScroll 48s linear infinite;
-      animation-delay: 3s;            /* start moving after 3 seconds */
-      animation-fill-mode: backwards; /* hold start position during the delay */
+      animation-delay: 3s;
+      animation-fill-mode: backwards;
     }
-    .trans-marquee:hover .trans-track { animation-play-state: paused; } /* pause so the chart is readable */
-    @keyframes flyScroll { from { transform: translateX(-50%); } to { transform: translateX(0); } } /* moves right, endless */
+    .trans-marquee:hover .trans-track { animation-play-state: paused; }
+    @keyframes flyScroll { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 
     .fly-card {
       position: relative; flex: 0 0 300px; width: 300px; height: 420px;
@@ -294,11 +292,21 @@
     .fly-cap { position: absolute; bottom: 1.25rem; left: 1.25rem; right: 1.25rem; z-index: 3; font-size: .95rem; line-height: 1.45; color: rgba(255,255,255,.92); }
     .fly-cap b { font-weight: 700; color: #fff; }
 
-    .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; }
-    .testi-card { background: var(--card); border: 1px solid var(--border2); border-radius: 16px; padding: 1.75rem; transition: border-color .2s, transform .2s, box-shadow .25s; }
+    /* testimonials (scroller) */
+    .testi-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
+    .testi-title { font-family: 'Fraunces',serif; font-size: 1.5rem; font-weight: 700; }
+    .testi-arrows { display: flex; gap: 0.6rem; }
+    .testi-arrows button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--border); background: transparent; color: var(--text); font-size: 1.25rem; cursor: pointer; display: grid; place-items: center; transition: background .2s, border-color .2s; }
+    .testi-arrows button:hover { background: var(--purple-dim); border-color: var(--purple-lt); }
+    .testi-scroller { display: flex; gap: 1.5rem; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding-bottom: 0.5rem; scrollbar-width: none; -ms-overflow-style: none; }
+    .testi-scroller::-webkit-scrollbar { display: none; }
+    .testi-card { flex: 0 0 340px; max-width: 340px; scroll-snap-align: start; background: var(--card); border: 1px solid var(--border2); border-radius: 16px; padding: 1.75rem; transition: border-color .2s, transform .2s, box-shadow .25s; }
     .testi-card:hover { border-color: var(--purple); transform: translateY(-4px); box-shadow: var(--shadow-glow); }
     .testi-stars { color: var(--gold); font-size: 0.875rem; margin-bottom: 0.875rem; }
     .testi-q { font-size: 0.9688rem; line-height: 1.72; color: var(--text2); font-style: italic; }
+    .testi-author { display: flex; flex-direction: column; margin-top: 1.1rem; padding-top: 1rem; border-top: 1px solid var(--border2); }
+    .testi-name { font-weight: 700; font-size: 0.9375rem; color: var(--text); }
+    .testi-city { font-size: 0.8125rem; color: var(--muted); }
 
     /* ═══ 8. WHAT'S INCLUDED ═══ */
     #included { background: var(--surface); }
@@ -348,7 +356,6 @@
     .fcta-note { font-size: 0.8125rem; color: var(--muted); }
     .fcta-note strong { color: var(--purple-lt); }
 
-    /* FOOTER */
     footer { background: var(--surface); border-top: 1px solid var(--border2); padding: 2rem; }
     .foot-in { max-width: var(--max); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
     .foot-brand { font-size: 0.875rem; color: var(--muted); }
@@ -357,7 +364,6 @@
     .foot-links a { font-size: 0.8125rem; color: var(--muted); transition: color .2s; }
     .foot-links a:hover { color: var(--text); }
 
-    /* SCROLL FADE */
     .fade-up { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
     .fade-up.in { opacity: 1; transform: translateY(0); }
     .d1 { transition-delay: .1s; }
@@ -368,27 +374,33 @@
     /* ═══════════════════════════════════════════ RESPONSIVE ═══ */
     @media (max-width: 1024px) {
       .about-grid { grid-template-columns: 380px 1fr; gap: 3rem; }
-      .fw-grid { grid-template-columns: repeat(3,1fr); }
       .how-row { grid-template-columns: repeat(2,1fr); }
     }
     @media (max-width: 900px) {
       .nav-links, .nav-cta-d { display: none; }
       .fw-wrap { grid-template-columns: 1fr; gap: 1.5rem; }
       .fw-sticky { position: static; min-height: 0; margin-bottom: 1rem; }
-      .fw-images { grid-area: auto; padding-block: 0; gap: 2rem; }
+      /* mobile: horizontal image scroller */
+      .fw-images { grid-area: auto; padding: 0 0 0.5rem; flex-direction: row; gap: 1rem;
+        overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+        scrollbar-width: none; -ms-overflow-style: none; align-items: stretch; }
+      .fw-images::-webkit-scrollbar { display: none; }
+      .fw-images li { width: 70vw; max-width: 320px; flex: 0 0 auto; scroll-snap-align: start; }
       .fw-blur { display: none; }
       .hamburger { display: flex; }
       .hero-in { grid-template-columns: 1fr; }
+      .hero-in > div:first-child { text-align: center; }
+      .hero-badge { margin-left: auto; margin-right: auto; }
+      .hero-hl, .hero-sub { margin-left: auto; margin-right: auto; }
+      .hero-ctas, .hero-tags { justify-content: center; }
       .hero-photo-wrap { max-width: 340px; margin: 0 auto; }
       .float-badge-1 { right: 0; } .float-badge-2 { left: 0; }
       .ow-grid { grid-template-columns: 1fr; gap: 2.5rem; }
       .ow-icons { grid-template-columns: repeat(3,1fr); }
       .who-grid { grid-template-columns: 1fr; }
       .wf-grid { grid-template-columns: 1fr; }
-      .fw-grid { grid-template-columns: repeat(2,1fr); }
       .about-grid { grid-template-columns: 1fr; }
       .about-photo-box { max-width: 360px; }
-      .testi-grid { grid-template-columns: 1fr; }
       .inc-grid2 { grid-template-columns: 1fr; }
       .how-row { grid-template-columns: 1fr; }
     }
@@ -397,8 +409,8 @@
       .hero-in { padding: 3rem 1.25rem; }
       .hero-ctas, .fcta-btns { flex-direction: column; align-items: stretch; }
       .hero-ctas .btn, .fcta-btns .btn { width: 100%; }
-      .fw-grid { grid-template-columns: 1fr 1fr; }
       .ow-icons { grid-template-columns: 1fr 1fr; }
+      .testi-card { flex-basis: 80vw; max-width: 80vw; }
     }
     @media (prefers-reduced-motion: reduce) {
       .fade-up { transition: none; opacity: 1; transform: none; }
@@ -485,7 +497,8 @@
     </div>
     <div class="hero-photo-wrap fade-up d2">
       <div class="hero-photo-box">
-        <img src="/static/hero.JPG" width="600" height="750" alt="FLS coach" loading="eager">        <div class="hero-photo-overlay"></div>
+        <img src="/static/hero.JPG" width="600" height="750" alt="FLS coach" loading="eager">
+        <div class="hero-photo-overlay"></div>
       </div>
       <div class="float-badge float-badge-1">
         <div class="fb-num">50 kg</div>
@@ -493,7 +506,7 @@
       </div>
       <div class="float-badge float-badge-2">
         <div class="fb-num">400k+</div>
-        <div class="fb-lbl">Lives transformed</div>
+        <div class="fb-lbl">Community reach</div>
       </div>
     </div>
   </div>
@@ -615,8 +628,12 @@
   <div class="sec-in">
     <div class="trans-hd fade-up">
       <div class="eyebrow eyebrow-purple" style="justify-content:center;">Real Transformations</div>
-      <h2 class="trans-hl">400k+ lives. <em>Real results.</em></h2>
+      <h2 class="trans-hl">Real people. <em>Real results.</em></h2>
       <p style="color:var(--text2); font-size:1.0625rem;">Hover any card to see the data behind the transformation.</p>
+    </div>
+    <div class="trans-arrows">
+      <button type="button" id="flyPrev" aria-label="Scroll transformations left">‹</button>
+      <button type="button" id="flyNext" aria-label="Scroll transformations right">›</button>
     </div>
   </div>
 
@@ -671,10 +688,20 @@
   </div>
 
   <div class="sec-in">
-    <div class="testi-grid">
-      <div class="testi-card fade-up"><div class="testi-stars">★★★★★</div><p class="testi-q">"This is the first time I've lost weight without feeling like I was on a diet."</p></div>
-      <div class="testi-card fade-up d1"><div class="testi-stars">★★★★★</div><p class="testi-q">"I still ate out with my family every week and lost 7kg."</p></div>
-      <div class="testi-card fade-up d2"><div class="testi-stars">★★★★★</div><p class="testi-q">"My bloodwork improved and I finally understand how my body actually works."</p></div>
+    <div class="testi-head">
+      <h3 class="testi-title">What clients say</h3>
+      <div class="testi-arrows">
+        <button type="button" id="testiPrev" aria-label="Scroll testimonials left">‹</button>
+        <button type="button" id="testiNext" aria-label="Scroll testimonials right">›</button>
+      </div>
+    </div>
+    <div class="testi-scroller" id="testiScroller">
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-q">"This is the first time I've lost weight without feeling like I was on a diet."</p><div class="testi-author"><span class="testi-name">Ananya Iyer</span><span class="testi-city">Bengaluru</span></div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-q">"I still ate out with my family every week and lost 7kg."</p><div class="testi-author"><span class="testi-name">Rohan Mehta</span><span class="testi-city">Mumbai</span></div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-q">"My bloodwork improved and I finally understand how my body actually works."</p><div class="testi-author"><span class="testi-name">Priya Nair</span><span class="testi-city">Pune</span></div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-q">"No banned foods, no crash dieting — just steady progress I could actually keep up with."</p><div class="testi-author"><span class="testi-name">Vikram Reddy</span><span class="testi-city">Hyderabad</span></div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-q">"The weekly check-ins kept me accountable on the weeks I wanted to quit."</p><div class="testi-author"><span class="testi-name">Sneha Kulkarni</span><span class="testi-city">Nagpur</span></div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-q">"My energy is back and my reports look better than they have in years."</p><div class="testi-author"><span class="testi-name">Arjun Sharma</span><span class="testi-city">Delhi</span></div></div>
     </div>
   </div>
 </section>
@@ -725,7 +752,7 @@
     <div class="faq-list">
       <div class="faq-item fade-up"><div class="faq-q" onclick="toggleFaq(this)">Will I have to give up rice, bread, or desserts?<span class="plus">+</span></div><div class="faq-a">No. We focus on balance and portion control, not restriction.</div></div>
       <div class="faq-item fade-up d1"><div class="faq-q" onclick="toggleFaq(this)">Do I need to join a gym?<span class="plus">+</span></div><div class="faq-a">Not necessarily. Your plan is built around your current lifestyle and resources.</div></div>
-      <div class="faq-item fade-up d2"><div class="faq-q" onclick="toggleFaq(this)">Can this help if I have PCOD or Type 2 Diabetes?<span class="plus">+</span></div><div class="faq-a">Yes. Many of our clients come to us with metabolic conditions, and the coaching is designed to improve the underlying lifestyle factors that contribute to them.</div></div>
+      <div class="faq-item fade-up d2"><div class="faq-q" onclick="toggleFaq(this)">Can this help if I have PCOD or Type 2 Diabetes?<span class="plus">+</span></div><div class="faq-a">Yes. Many of our clients come to us with metabolic conditions, and the coaching is designed to improve the underlying lifestyle factors that contribute to them. Results vary and this is not a substitute for medical care — always consult your physician before changing any medication.</div></div>
       <div class="faq-item fade-up d3"><div class="faq-q" onclick="toggleFaq(this)">How quickly can I expect results?<span class="plus">+</span></div><div class="faq-a">Most clients start noticing changes in energy, habits, and body composition within the first few weeks, with steady fat loss over the following months.</div></div>
     </div>
   </div>
@@ -771,11 +798,11 @@
 
 <script>
   /* ↓↓↓ CHANGE THESE TWO LINES ↓↓↓ */
-  const CALENDLY_URL = 'https://calendly.com/your-handle/intro-call';
-  const WHATSAPP_NUM = '919999999999';
+  const CALENDLY_URL = 'https://calendly.com/sanghrajkasahil/30min';
+  const WHATSAPP_NUM = '916289983635';
   /* ↑↑↑ CHANGE THESE TWO LINES ↑↑↑ */
 
-  const WHATSAPP_MSG = encodeURIComponent("Hi FLS! 👋 I'm interested in your health transformation coaching. Could you share details on pricing and availability?");
+  const WHATSAPP_MSG = encodeURIComponent("Hi FLS! I'm interested in your health transformation coaching. Could you share details on pricing and availability?");
 
   function openCalendly() {
     if (window.Calendly) { Calendly.initPopupWidget({ url: CALENDLY_URL }); }
@@ -806,8 +833,17 @@
   window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 20); }, { passive: true });
 
   const mobMenu = document.getElementById('mob-menu');
-  function toggleMenu() { mobMenu.classList.toggle('open'); }
-  function closeMenu()  { mobMenu.classList.remove('open'); }
+  const burger = document.querySelector('.hamburger');
+  function toggleMenu() {
+    const open = mobMenu.classList.toggle('open');
+    if (burger) burger.classList.toggle('open', open);
+    document.body.classList.toggle('menu-open', open);
+  }
+  function closeMenu() {
+    mobMenu.classList.remove('open');
+    if (burger) burger.classList.remove('open');
+    document.body.classList.remove('menu-open');
+  }
   document.addEventListener('click', e => {
     if (mobMenu.classList.contains('open') && !mobMenu.contains(e.target) && !e.target.closest('.hamburger')) closeMenu();
   });
@@ -838,6 +874,36 @@
     if (!el) return;
     const layers = 6;
     el.innerHTML = Array.from({length: layers}, (_, i) => `<div style="--i:${i + 1};"></div>`).join('');
+  })();
+
+  /* Transformation cards — manual nudge arrows (works with the auto-scroll) */
+  (function() {
+    const track = document.getElementById('flyTrack');
+    const wrap  = track ? track.parentElement : null;          /* .trans-marquee */
+    if (!track || !wrap) return;
+    let pos = 0;
+    const card = () => (track.querySelector('.fly-card')?.offsetWidth || 300) + 24;
+    function nudge(dir) {
+      track.style.animation = 'none';                          /* stop auto-scroll once user takes control */
+      const max = track.scrollWidth / 2;                       /* one set (content is duplicated) */
+      pos += dir * card();
+      if (pos > 0) pos -= max;
+      if (pos < -max) pos += max;
+      track.style.transform = `translateX(${pos}px)`;
+    }
+    document.getElementById('flyNext')?.addEventListener('click', () => nudge(-1));
+    document.getElementById('flyPrev')?.addEventListener('click', () => nudge(1));
+  })();
+
+  /* Testimonials horizontal scroll buttons */
+  (function() {
+    const sc = document.getElementById('testiScroller');
+    if (!sc) return;
+    const step = () => (sc.querySelector('.testi-card')?.offsetWidth || 340) + 24;
+    const prev = document.getElementById('testiPrev');
+    const next = document.getElementById('testiNext');
+    if (next) next.addEventListener('click', () => sc.scrollBy({ left: step(), behavior: 'smooth' }));
+    if (prev) prev.addEventListener('click', () => sc.scrollBy({ left: -step(), behavior: 'smooth' }));
   })();
 </script>
 
