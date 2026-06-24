@@ -124,10 +124,6 @@
     .theme-toggle { width: 48px; height: 26px; border-radius: 13px; background: var(--card2); border: 1px solid var(--border); position: relative; cursor: pointer; flex-shrink: 0; transition: background 0.3s; }
     .theme-toggle-thumb { position: absolute; top: 3px; left: 3px; width: 18px; height: 18px; border-radius: 50%; background: var(--purple); display: flex; align-items: center; justify-content: center; font-size: 0.625rem; transition: transform 0.3s, background 0.3s; }
     [data-theme="light"] .theme-toggle-thumb { transform: translateX(22px); }
-    .nav-pill { display: flex; align-items: center; gap: 0.875rem; background: var(--card2); border: 1px solid var(--border); border-radius: 100px; padding: 5px 5px 5px 1.125rem; }
-    .nav-pill .expert { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8125rem; font-weight: 600; color: var(--text2); white-space: nowrap; }
-    .nav-pill .expert svg { width: 16px; height: 16px; color: var(--purple-lt); }
-    .nav-pill .btn { padding: 0.6rem 1.25rem; font-size: 0.875rem; }
     .hamburger { display: none; flex-direction: column; gap: 5px; padding: 4px; z-index: 320; position: relative; }
     .hamburger span { display: block; width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: transform .3s ease, opacity .25s ease; }
     .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
@@ -268,6 +264,8 @@
     }
     .trans-marquee:hover .trans-track { animation-play-state: paused; }
     @keyframes flyScroll { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+    .trans-track-rev { animation-name: flyScrollRev; }
+    @keyframes flyScrollRev { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
     .fly-card {
       position: relative; flex: 0 0 300px; width: 300px; height: 420px;
@@ -291,22 +289,6 @@
     .fly-chart text { fill: rgba(255,255,255,.75); font-size: 12px; font-family: 'DM Sans',sans-serif; }
     .fly-cap { position: absolute; bottom: 1.25rem; left: 1.25rem; right: 1.25rem; z-index: 3; font-size: .95rem; line-height: 1.45; color: rgba(255,255,255,.92); }
     .fly-cap b { font-weight: 700; color: #fff; }
-
-    /* testimonials (scroller) */
-    .testi-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
-    .testi-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: 1.5rem; font-weight: 700; }
-    .testi-arrows { display: flex; gap: 0.6rem; }
-    .testi-arrows button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--border); background: transparent; color: var(--text); font-size: 1.25rem; cursor: pointer; display: grid; place-items: center; transition: background .2s, border-color .2s; }
-    .testi-arrows button:hover { background: var(--purple-dim); border-color: var(--purple-lt); }
-    .testi-scroller { display: flex; gap: 1.5rem; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding-bottom: 0.5rem; scrollbar-width: none; -ms-overflow-style: none; }
-    .testi-scroller::-webkit-scrollbar { display: none; }
-    .testi-card { flex: 0 0 340px; max-width: 340px; scroll-snap-align: start; background: var(--card); border: 1px solid var(--border2); border-radius: 16px; padding: 1.75rem; transition: border-color .2s, transform .2s, box-shadow .25s; }
-    .testi-card:hover { border-color: var(--purple); transform: translateY(-4px); box-shadow: var(--shadow-glow); }
-    .testi-stars { color: var(--gold); font-size: 0.875rem; margin-bottom: 0.875rem; }
-    .testi-q { font-size: 0.9688rem; line-height: 1.72; color: var(--text2); font-style: normal; }
-    .testi-author { display: flex; flex-direction: column; margin-top: 1.1rem; padding-top: 1rem; border-top: 1px solid var(--border2); }
-    .testi-name { font-weight: 700; font-size: 0.9375rem; color: var(--text); }
-    .testi-city { font-size: 0.8125rem; color: var(--muted); }
 
     /* ═══ 8. WHAT'S INCLUDED ═══ */
     #included { background: var(--surface); }
@@ -404,7 +386,6 @@
       .hero-ctas, .fcta-btns { flex-direction: column; align-items: stretch; }
       .hero-ctas .btn, .fcta-btns .btn { width: 100%; }
       .ow-icons { grid-template-columns: 1fr 1fr; }
-      .testi-card { flex-basis: 80vw; max-width: 80vw; }
     }
     @media (prefers-reduced-motion: reduce) {
       .fade-up { transition: none; opacity: 1; transform: none; }
@@ -457,13 +438,7 @@
     <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
       <div class="theme-toggle-thumb"><span id="theme-icon">🌙</span></div>
     </button>
-    <div class="nav-pill nav-cta-d">
-      <span class="expert">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12a8 8 0 0116 0M4 12v3a2 2 0 002 2M20 12v3a2 2 0 01-2 2h-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-        Talk to an expert
-      </span>
-      <button class="btn btn-purple" onclick="openCalendly()">Book a Call</button>
-    </div>
+    <button class="btn btn-purple nav-cta-d" onclick="openCalendly()">Book a Free Call</button>
     <button class="hamburger" onclick="toggleMenu()" aria-label="Open menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
@@ -475,7 +450,7 @@
   <a href="#transformations" onclick="closeMenu()">Results</a>
   <a href="#how" onclick="closeMenu()">How It Works</a>
   <a href="#faq" onclick="closeMenu()">FAQ</a>
-  <button class="btn btn-purple btn-lg" onclick="openCalendly();closeMenu()">Book a Call</button>
+  <button class="btn btn-purple btn-lg" onclick="openCalendly();closeMenu()">Book a Free Call</button>
 </div>
 
 <!-- ════════ 1. HERO ════════ -->
@@ -496,31 +471,20 @@
       </p>
       <div class="hero-ctas fade-up d3">
         <button class="btn btn-purple btn-lg" onclick="openCalendly()">
-          Book a Call
+          Book a Free Call
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
         <a href="#transformations" class="btn btn-ghost btn-lg">View Client Transformations</a>
       </div>
-      <div class="hero-tags fade-up">
-        <span class="htag">PCOD / PCOS</span>
-        <span class="htag">Type 2 Diabetes</span>
-        <span class="htag">Fatty Liver</span>
-        <span class="htag">Sustainable Habits</span>
-        <span class="htag">No Banned Foods</span>
-      </div>
     </div>
     <div class="hero-photo-wrap fade-up d2">
       <div class="hero-photo-box">
-        <img src="/static/hero.JPG" width="600" height="750" alt="FLS coach" loading="eager">
+        <img src="/static/hero.png" width="600" height="750" alt="FLS coach" loading="eager">
         <div class="hero-photo-overlay"></div>
       </div>
       <div class="float-badge float-badge-1">
         <div class="fb-num">50 kg</div>
         <div class="fb-lbl">Lost personally</div>
-      </div>
-      <div class="float-badge float-badge-2">
-        <div class="fb-num">1k+</div>
-        <div class="fb-lbl">Community reach</div>
       </div>
     </div>
   </div>
@@ -608,7 +572,7 @@
     <div class="about-grid">
       <div class="fade-up">
         <div class="about-photo-box">
-          <img src="/static/fatsahil.JPG" width="600" height="780" alt="" loading="lazy">
+          <img src="/static/hero.png" width="600" height="780" alt="" loading="lazy">
           <div class="about-photo-badge">
             <div class="apb-n">50 kg</div>
             <div class="apb-l">lost personally</div>
@@ -691,21 +655,53 @@
     </div>
   </div>
 
-  <div class="sec-in">
-    <div class="testi-head">
-      <h3 class="testi-title">What clients say</h3>
-      <div class="testi-arrows">
-        <button type="button" id="testiPrev" aria-label="Scroll testimonials left">‹</button>
-        <button type="button" id="testiNext" aria-label="Scroll testimonials right">›</button>
+  <div class="trans-marquee">
+    <div class="trans-track trans-track-rev" id="flyTrack2">
+      <!-- Card 1 -->
+      <div class="fly-card">
+        <img class="bg" src="/static/5.png" alt="">
+        <div class="fly-grad"></div>
+        <span class="fly-hint">Hover for data</span>
+        <div class="fly-stat"><div class="big">120<small>mmHg</small></div><div class="lbl">Blood pressure ↘</div></div>
+        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,40 90,30 160,55 215,110"/><circle cx="20" cy="40" r="3.5"/><circle cx="90" cy="30" r="3.5"/><circle cx="160" cy="55" r="3.5"/><circle cx="215" cy="110" r="3.5"/><text x="12" y="135">150</text><text x="150" y="135">135</text><text x="200" y="135">120</text></svg></div>
+        <div class="fly-cap">From <b>118 kg</b> to <b>92 kg</b> and 15% body fat — my life back.</div>
       </div>
-    </div>
-    <div class="testi-scroller" id="testiScroller">
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-q">"This is the first time I've lost weight without feeling like I was on a diet."</p><div class="testi-author"><span class="testi-name">Ananya Iyer</span><span class="testi-city">Bengaluru</span></div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-q">"I still ate out with my family every week and lost 7kg."</p><div class="testi-author"><span class="testi-name">Rohan Mehta</span><span class="testi-city">Mumbai</span></div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-q">"My bloodwork improved and I finally understand how my body actually works."</p><div class="testi-author"><span class="testi-name">Priya Nair</span><span class="testi-city">Pune</span></div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-q">"No banned foods, no crash dieting — just steady progress I could actually keep up with."</p><div class="testi-author"><span class="testi-name">Vikram Reddy</span><span class="testi-city">Hyderabad</span></div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-q">"The weekly check-ins kept me accountable on the weeks I wanted to quit."</p><div class="testi-author"><span class="testi-name">Sneha Kulkarni</span><span class="testi-city">Nagpur</span></div></div>
-      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-q">"My energy is back and my reports look better than they have in years."</p><div class="testi-author"><span class="testi-name">Arjun Sharma</span><span class="testi-city">Delhi</span></div></div>
+      <!-- Card 2 -->
+      <div class="fly-card">
+        <img class="bg" src="/static/6.png" alt="">
+        <div class="fly-grad"></div>
+        <span class="fly-hint">Hover for data</span>
+        <div class="fly-stat"><div class="big">85<small>mg/dL</small></div><div class="lbl">Diabetes ↘</div></div>
+        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,80 90,45 215,105"/><circle cx="20" cy="80" r="3.5"/><circle cx="90" cy="45" r="3.5"/><circle cx="215" cy="105" r="3.5"/><text x="6" y="125">200</text><text x="78" y="125">220</text><text x="178" y="125">85 mg/dl</text></svg></div>
+        <div class="fly-cap">Reversed diabetes, lost <b>17 kg</b> and gained energy.</div>
+      </div>
+      <!-- Card 3 -->
+      <div class="fly-card">
+        <img class="bg" src="/static/7.png" alt="">
+        <div class="fly-grad"></div>
+        <span class="fly-hint">Hover for data</span>
+        <div class="fly-stat"><div class="big">17<small>kg</small></div><div class="lbl">Diabetes reversed</div></div>
+        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,35 90,60 160,80 215,115"/><circle cx="20" cy="35" r="3.5"/><circle cx="90" cy="60" r="3.5"/><circle cx="160" cy="80" r="3.5"/><circle cx="215" cy="115" r="3.5"/><text x="14" y="135">HbA1c 8.1 → 5.6</text></svg></div>
+        <div class="fly-cap">Reversed diabetes, lost <b>17 kg</b> — no more medication.</div>
+      </div>
+      <!-- Card 4 -->
+      <div class="fly-card">
+        <img class="bg" src="/static/8.png" alt="">
+        <div class="fly-grad"></div>
+        <span class="fly-hint">Hover for data</span>
+        <div class="fly-stat"><div class="big">35<small>kg</small></div><div class="lbl">Weight lost</div></div>
+        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,30 90,55 160,85 215,118"/><circle cx="20" cy="30" r="3.5"/><circle cx="90" cy="55" r="3.5"/><circle cx="160" cy="85" r="3.5"/><circle cx="215" cy="118" r="3.5"/><text x="6" y="135">92.5 kg → 57.5 kg</text></svg></div>
+        <div class="fly-cap">From PCOD and obesity to a life she loves.</div>
+      </div>
+      <!-- Card 5 -->
+      <div class="fly-card">
+        <img class="bg" src="/static/9.png" alt="">
+        <div class="fly-grad"></div>
+        <span class="fly-hint">Hover for data</span>
+        <div class="fly-stat"><div class="big">8<small>kg</small></div><div class="lbl">PCOD improved</div></div>
+        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,45 90,40 160,70 215,110"/><circle cx="20" cy="45" r="3.5"/><circle cx="90" cy="40" r="3.5"/><circle cx="160" cy="70" r="3.5"/><circle cx="215" cy="110" r="3.5"/><text x="14" y="135">Cycles regular in 5 mo</text></svg></div>
+        <div class="fly-cap"><b>Priya</b> — lost 8 kg, improved PCOD in 5 months.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -770,7 +766,7 @@
     <p class="fcta-sub fade-up d2">You don't need another crash diet. You don't need to wait for the "perfect time." You need a simple, sustainable system that works with your life — not against it.</p>
     <div class="fcta-btns fade-up d2">
       <button class="btn btn-purple btn-lg" onclick="openCalendly()">
-        Book a Call
+        Book a Free Call
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </button>
       <button class="btn btn-wa btn-lg" onclick="openWhatsApp()">
@@ -793,7 +789,7 @@
       <a href="#transformations">Results</a>
       <a href="#how">How It Works</a>
       <a href="#faq">FAQ</a>
-      <a href="javascript:void(0)" onclick="openCalendly()">Book a Call</a>
+      <a href="javascript:void(0)" onclick="openCalendly()">Book a Free Call</a>
     </nav>
   </div>
 </footer>
@@ -879,10 +875,10 @@
 
   /* Duplicate the transformation cards so the auto-scroll loops seamlessly */
   (function() {
-    const track = document.getElementById('flyTrack');
-    if (!track) return;
-    const clone = track.cloneNode(true);
-    [...clone.children].forEach(node => { node.setAttribute('aria-hidden', 'true'); track.appendChild(node); });
+    document.querySelectorAll('.trans-track').forEach(track => {
+      const clone = track.cloneNode(true);
+      [...clone.children].forEach(node => { node.setAttribute('aria-hidden', 'true'); track.appendChild(node); });
+    });
   })();
 
 
@@ -903,17 +899,6 @@
     }
     document.getElementById('flyNext')?.addEventListener('click', () => nudge(-1));
     document.getElementById('flyPrev')?.addEventListener('click', () => nudge(1));
-  })();
-
-  /* Testimonials horizontal scroll buttons */
-  (function() {
-    const sc = document.getElementById('testiScroller');
-    if (!sc) return;
-    const step = () => (sc.querySelector('.testi-card')?.offsetWidth || 340) + 24;
-    const prev = document.getElementById('testiPrev');
-    const next = document.getElementById('testiNext');
-    if (next) next.addEventListener('click', () => sc.scrollBy({ left: step(), behavior: 'smooth' }));
-    if (prev) prev.addEventListener('click', () => sc.scrollBy({ left: -step(), behavior: 'smooth' }));
   })();
 </script>
 
