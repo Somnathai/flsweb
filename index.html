@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FLS | Health Transformation Coaching</title>
   <meta name="description" content="Lose 5–10kg of body fat and reverse PCOD, Type 2 Diabetes, and Fatty Liver with a sustainable, science-backed coaching program for busy professionals.">
+  <link rel="icon" type="image/png" href="/static/logo.png">
+  <link rel="apple-touch-icon" href="/static/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
@@ -114,6 +116,8 @@
     [data-theme="light"] #nav.scrolled { background: rgba(255,255,255,0.92); }
     .nav-in { max-width: var(--max); margin: 0 auto; width: 100%; display: flex; align-items: center; gap: 1.5rem; }
     .nav-logo { display: flex; align-items: center; gap: 0.625rem; margin-right: auto; }
+    .nav-logo a { display: flex; align-items: center; }
+    .nav-logo .logo-img { height: 56px; width: auto; max-width: 240px; object-fit: contain; display: block; }
     .logo-mark { width: 36px; height: 36px; background: var(--purple); border-radius: 9px; display: flex; align-items: center; justify-content: center; color: #fff; }
     .logo-mark svg { width: 20px; height: 20px; }
     .logo-name { font-weight: 700; font-size: 1.0625rem; letter-spacing: 0.04em; }
@@ -422,10 +426,9 @@
 <nav id="nav">
   <div class="nav-in">
     <div class="nav-logo">
-      <div class="logo-mark">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2 12L22 3l-5 18-4.5-6.5L6 13l-4-1z" fill="currentColor"/></svg>
-      </div>
-      <span class="logo-name">FLS <span>Health</span></span>
+      <a href="#hero" aria-label="FLS Health — home">
+        <img src="/static/logo.png" alt="FLS Health" class="logo-img">
+      </a>
     </div>
     <div class="nav-links">
       <a href="#whofor">Who It's For</a>
