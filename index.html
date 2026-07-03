@@ -419,6 +419,15 @@
     .inc-row2 { justify-content: flex-start; text-align: left; }
     .foot-in { justify-content: center; text-align: center; }
     .foot-links { justify-content: center; }
+
+    /* ════ LIGHT-MODE-ONLY FIXES ════ */
+    /* Logo wordmark is light-on-transparent → darken it so it reads on white */
+    [data-theme="light"] .nav-logo .logo-img { filter: invert(1) hue-rotate(180deg) brightness(0.9); }
+
+    /* Bright lime checkmarks are low-contrast on white → use a deeper green in light mode */
+    [data-theme="light"] .who-check { background: rgba(77,124,15,0.10); border-color: #4D7C0F; color: #4D7C0F; }
+    [data-theme="light"] .inc-check2 { background: rgba(77,124,15,0.10); border-color: #4D7C0F; }
+    [data-theme="light"] .inc-check2 svg path { stroke: #4D7C0F; }
   </style>
 </head>
 
