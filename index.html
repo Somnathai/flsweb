@@ -168,6 +168,9 @@
     .fb-num { font-family: 'Manrope', sans-serif; font-size: 1.75rem; font-weight: 900; color: var(--purple-lt); line-height: 1; }
     .fb-lbl { font-size: 0.75rem; font-weight: 600; opacity: 0.75; }
 
+    /* ═══ HERO STRIP (testimonial band under hero) ═══ */
+    #hero-strip { background: var(--bg); padding: 2rem 0 3.5rem; }
+
     /* ═══ 2. OVERWHELMED ═══ */
     #overwhelmed { background: var(--surface); border-top: 1px solid var(--border2); border-bottom: 1px solid var(--border2); }
     .ow-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
@@ -507,6 +510,104 @@
   </div>
 </section>
 
+<!-- ════════ HERO TESTIMONIAL STRIP (single row) ════════ -->
+<section id="hero-strip">
+  <div class="trans-marquee">
+    <div class="trans-track">
+      <!-- 1.png -->
+      <div class="fly-card">
+        <img class="bg" src="/static/1.png" alt="">
+        <div class="fly-grad"></div>
+        <span class="fly-hint">Hover for data</span>
+        <div class="fly-stat"><div class="big">12<small>kg</small></div><div class="lbl">Type 2 diabetes reversed</div></div>
+        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,30 85,58 150,86 215,112"/><circle cx="20" cy="30" r="3.5"/><circle cx="85" cy="58" r="3.5"/><circle cx="150" cy="86" r="3.5"/><circle cx="215" cy="112" r="3.5"/><text x="76" y="140">98 → 86 kg</text></svg></div>
+        <div class="fly-cap">Down <b>12 kg</b> (98 → 86 kg) — type 2 diabetes reversed.</div>
+      </div>
+      <!-- card1.jpg -->
+      <div class="fly-card">
+        <img class="bg" src="/static/card1.jpg" alt="">
+        <div class="fly-grad"></div>
+        <span class="fly-hint">Hover for data</span>
+        <div class="fly-stat"><div class="big">7<small>kg</small></div><div class="lbl">PCOD reversed</div></div>
+        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,30 85,58 150,86 215,112"/><circle cx="20" cy="30" r="3.5"/><circle cx="85" cy="58" r="3.5"/><circle cx="150" cy="86" r="3.5"/><circle cx="215" cy="112" r="3.5"/><text x="76" y="140">62 → 55 kg</text></svg></div>
+        <div class="fly-cap"><b>7 kg</b> lighter (62 → 55 kg) — PCOD reversed.</div>
+      </div>
+      <!-- 2.png -->
+      <div class="fly-card">
+        <img class="bg" src="/static/2.png" alt="">
+        <div class="fly-grad"></div>
+        <span class="fly-hint">Hover for data</span>
+        <div class="fly-stat"><div class="big">8<small>kg</small></div><div class="lbl">PCOD reversed</div></div>
+        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,30 85,58 150,86 215,112"/><circle cx="20" cy="30" r="3.5"/><circle cx="85" cy="58" r="3.5"/><circle cx="150" cy="86" r="3.5"/><circle cx="215" cy="112" r="3.5"/><text x="76" y="140">58 → 50 kg</text></svg></div>
+        <div class="fly-cap">Lost <b>8 kg</b> (58 → 50 kg) and reversed PCOD.</div>
+      </div>
+      <!-- 3.png -->
+      <div class="fly-card">
+        <img class="bg" src="/static/3.png" alt="">
+        <div class="fly-grad"></div>
+        <span class="fly-hint">Hover for data</span>
+        <div class="fly-stat"><div class="big">9<small>kg</small></div><div class="lbl">PCOD reversed</div></div>
+        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,30 85,58 150,86 215,112"/><circle cx="20" cy="30" r="3.5"/><circle cx="85" cy="58" r="3.5"/><circle cx="150" cy="86" r="3.5"/><circle cx="215" cy="112" r="3.5"/><text x="76" y="140">62 → 53 kg</text></svg></div>
+        <div class="fly-cap">From <b>62 kg to 53 kg</b> — 9 kg down, PCOD reversed.</div>
+      </div>
+      <!-- 4.png -->
+      <div class="fly-card">
+        <img class="bg" src="/static/4.png" alt="">
+        <div class="fly-grad"></div>
+        <span class="fly-hint">Hover for data</span>
+        <div class="fly-stat"><div class="big">8<small>kg</small></div><div class="lbl">PCOD reversed</div></div>
+        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,30 85,58 150,86 215,112"/><circle cx="20" cy="30" r="3.5"/><circle cx="85" cy="58" r="3.5"/><circle cx="150" cy="86" r="3.5"/><circle cx="215" cy="112" r="3.5"/><text x="76" y="140">60 → 52 kg</text></svg></div>
+        <div class="fly-cap">Lost <b>8 kg</b> (60 → 52 kg) — PCOD reversed.</div>
+      </div>
+      <!-- 5.png -->
+      <div class="fly-card">
+        <img class="bg" src="/static/5.png" alt="">
+        <div class="fly-grad"></div>
+        <span class="fly-hint">Hover for data</span>
+        <div class="fly-stat"><div class="big">12<small>kg</small></div><div class="lbl">PCOD reversed</div></div>
+        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,30 85,58 150,86 215,112"/><circle cx="20" cy="30" r="3.5"/><circle cx="85" cy="58" r="3.5"/><circle cx="150" cy="86" r="3.5"/><circle cx="215" cy="112" r="3.5"/><text x="76" y="140">74 → 62 kg</text></svg></div>
+        <div class="fly-cap">Down <b>12 kg</b> (74 → 62 kg) — PCOD reversed.</div>
+      </div>
+      <!-- 6.png -->
+      <div class="fly-card">
+        <img class="bg" src="/static/6.png" alt="">
+        <div class="fly-grad"></div>
+        <span class="fly-hint">Hover for data</span>
+        <div class="fly-stat"><div class="big">8<small>kg</small></div><div class="lbl">PCOD reversed</div></div>
+        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,30 85,58 150,86 215,112"/><circle cx="20" cy="30" r="3.5"/><circle cx="85" cy="58" r="3.5"/><circle cx="150" cy="86" r="3.5"/><circle cx="215" cy="112" r="3.5"/><text x="76" y="140">62 → 54 kg</text></svg></div>
+        <div class="fly-cap"><b>8 kg</b> lighter (62 → 54 kg) — PCOD reversed.</div>
+      </div>
+      <!-- 7.png -->
+      <div class="fly-card">
+        <img class="bg" src="/static/7.png" alt="">
+        <div class="fly-grad"></div>
+        <span class="fly-hint">Hover for data</span>
+        <div class="fly-stat"><div class="big">22<small>kg</small></div><div class="lbl">Blood pressure resolved</div></div>
+        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,26 85,54 150,86 215,118"/><circle cx="20" cy="26" r="3.5"/><circle cx="85" cy="54" r="3.5"/><circle cx="150" cy="86" r="3.5"/><circle cx="215" cy="118" r="3.5"/><text x="76" y="140">82 → 60 kg</text></svg></div>
+        <div class="fly-cap"><b>22 kg</b> down (82 → 60 kg) — blood pressure resolved.</div>
+      </div>
+      <!-- 8.png -->
+      <div class="fly-card">
+        <img class="bg" src="/static/8.png" alt="">
+        <div class="fly-grad"></div>
+        <span class="fly-hint">Hover for data</span>
+        <div class="fly-stat"><div class="big">6<small>kg</small></div><div class="lbl">Bloating &amp; acidity resolved</div></div>
+        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,34 85,58 150,84 215,110"/><circle cx="20" cy="34" r="3.5"/><circle cx="85" cy="58" r="3.5"/><circle cx="150" cy="84" r="3.5"/><circle cx="215" cy="110" r="3.5"/><text x="76" y="140">72 → 66 kg</text></svg></div>
+        <div class="fly-cap">Lost <b>6 kg</b> (72 → 66 kg) — chronic bloating and acidity resolved.</div>
+      </div>
+      <!-- 9.png -->
+      <div class="fly-card">
+        <img class="bg" src="/static/9.png" alt="">
+        <div class="fly-grad"></div>
+        <span class="fly-hint">Hover for data</span>
+        <div class="fly-stat"><div class="big">8<small>kg</small></div><div class="lbl">Blood pressure normalized</div></div>
+        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,30 85,58 150,86 215,112"/><circle cx="20" cy="30" r="3.5"/><circle cx="85" cy="58" r="3.5"/><circle cx="150" cy="86" r="3.5"/><circle cx="215" cy="112" r="3.5"/><text x="76" y="140">78 → 70 kg</text></svg></div>
+        <div class="fly-cap">Down <b>8 kg</b> (78 → 70 kg) — blood pressure back in the normal range.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ════════ 2. YOU'RE NOT LAZY ════════ -->
 <section id="overwhelmed" class="sec">
   <div class="sec-in">
@@ -624,100 +725,100 @@
 
   <div class="trans-marquee">
     <div class="trans-track" id="flyTrack">
-      <!-- Card 1 -->
+      <!-- 1.png -->
       <div class="fly-card">
         <img class="bg" src="/static/1.png" alt="">
         <div class="fly-grad"></div>
         <span class="fly-hint">Hover for data</span>
-        <div class="fly-stat"><div class="big">120<small>mmHg</small></div><div class="lbl">Blood pressure ↘</div></div>
-        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,40 90,30 160,55 215,110"/><circle cx="20" cy="40" r="3.5"/><circle cx="90" cy="30" r="3.5"/><circle cx="160" cy="55" r="3.5"/><circle cx="215" cy="110" r="3.5"/><text x="12" y="135">150</text><text x="150" y="135">135</text><text x="200" y="135">120</text></svg></div>
-        <div class="fly-cap">From <b>118 kg</b> to <b>92 kg</b> and 15% body fat — my life back.</div>
+        <div class="fly-stat"><div class="big">12<small>kg</small></div><div class="lbl">Type 2 diabetes reversed</div></div>
+        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,30 85,58 150,86 215,112"/><circle cx="20" cy="30" r="3.5"/><circle cx="85" cy="58" r="3.5"/><circle cx="150" cy="86" r="3.5"/><circle cx="215" cy="112" r="3.5"/><text x="76" y="140">98 → 86 kg</text></svg></div>
+        <div class="fly-cap">Down <b>12 kg</b> (98 → 86 kg) — type 2 diabetes reversed.</div>
       </div>
-      <!-- Card 2 -->
+      <!-- card1.jpg -->
       <div class="fly-card">
         <img class="bg" src="/static/card1.jpg" alt="">
         <div class="fly-grad"></div>
         <span class="fly-hint">Hover for data</span>
-        <div class="fly-stat"><div class="big">85<small>mg/dL</small></div><div class="lbl">Diabetes ↘</div></div>
-        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,80 90,45 215,105"/><circle cx="20" cy="80" r="3.5"/><circle cx="90" cy="45" r="3.5"/><circle cx="215" cy="105" r="3.5"/><text x="6" y="125">200</text><text x="78" y="125">220</text><text x="178" y="125">85 mg/dl</text></svg></div>
-        <div class="fly-cap">Reversed diabetes, lost <b>17 kg</b> and gained energy.</div>
+        <div class="fly-stat"><div class="big">7<small>kg</small></div><div class="lbl">PCOD reversed</div></div>
+        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,30 85,58 150,86 215,112"/><circle cx="20" cy="30" r="3.5"/><circle cx="85" cy="58" r="3.5"/><circle cx="150" cy="86" r="3.5"/><circle cx="215" cy="112" r="3.5"/><text x="76" y="140">62 → 55 kg</text></svg></div>
+        <div class="fly-cap"><b>7 kg</b> lighter (62 → 55 kg) — PCOD reversed.</div>
       </div>
-      <!-- Card 3 -->
+      <!-- 2.png -->
       <div class="fly-card">
         <img class="bg" src="/static/2.png" alt="">
         <div class="fly-grad"></div>
         <span class="fly-hint">Hover for data</span>
-        <div class="fly-stat"><div class="big">17<small>kg</small></div><div class="lbl">Diabetes reversed</div></div>
-        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,35 90,60 160,80 215,115"/><circle cx="20" cy="35" r="3.5"/><circle cx="90" cy="60" r="3.5"/><circle cx="160" cy="80" r="3.5"/><circle cx="215" cy="115" r="3.5"/><text x="14" y="135">HbA1c 8.1 → 5.6</text></svg></div>
-        <div class="fly-cap">Reversed diabetes, lost <b>17 kg</b> — no more medication.</div>
+        <div class="fly-stat"><div class="big">8<small>kg</small></div><div class="lbl">PCOD reversed</div></div>
+        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,30 85,58 150,86 215,112"/><circle cx="20" cy="30" r="3.5"/><circle cx="85" cy="58" r="3.5"/><circle cx="150" cy="86" r="3.5"/><circle cx="215" cy="112" r="3.5"/><text x="76" y="140">58 → 50 kg</text></svg></div>
+        <div class="fly-cap">Lost <b>8 kg</b> (58 → 50 kg) and reversed PCOD.</div>
       </div>
-      <!-- Card 4 -->
+      <!-- 3.png -->
       <div class="fly-card">
         <img class="bg" src="/static/3.png" alt="">
         <div class="fly-grad"></div>
         <span class="fly-hint">Hover for data</span>
-        <div class="fly-stat"><div class="big">35<small>kg</small></div><div class="lbl">Weight lost</div></div>
-        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,30 90,55 160,85 215,118"/><circle cx="20" cy="30" r="3.5"/><circle cx="90" cy="55" r="3.5"/><circle cx="160" cy="85" r="3.5"/><circle cx="215" cy="118" r="3.5"/><text x="6" y="135">92.5 kg → 57.5 kg</text></svg></div>
-        <div class="fly-cap">From PCOD and obesity to a life she loves.</div>
+        <div class="fly-stat"><div class="big">9<small>kg</small></div><div class="lbl">PCOD reversed</div></div>
+        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,30 85,58 150,86 215,112"/><circle cx="20" cy="30" r="3.5"/><circle cx="85" cy="58" r="3.5"/><circle cx="150" cy="86" r="3.5"/><circle cx="215" cy="112" r="3.5"/><text x="76" y="140">62 → 53 kg</text></svg></div>
+        <div class="fly-cap">From <b>62 kg to 53 kg</b> — 9 kg down, PCOD reversed.</div>
       </div>
-      <!-- Card 5 -->
+      <!-- 4.png -->
       <div class="fly-card">
         <img class="bg" src="/static/4.png" alt="">
         <div class="fly-grad"></div>
         <span class="fly-hint">Hover for data</span>
-        <div class="fly-stat"><div class="big">8<small>kg</small></div><div class="lbl">PCOD improved</div></div>
-        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,45 90,40 160,70 215,110"/><circle cx="20" cy="45" r="3.5"/><circle cx="90" cy="40" r="3.5"/><circle cx="160" cy="70" r="3.5"/><circle cx="215" cy="110" r="3.5"/><text x="14" y="135">Cycles regular in 5 mo</text></svg></div>
-        <div class="fly-cap"><b>Priya</b> — lost 8 kg, improved PCOD in 5 months.</div>
+        <div class="fly-stat"><div class="big">8<small>kg</small></div><div class="lbl">PCOD reversed</div></div>
+        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,30 85,58 150,86 215,112"/><circle cx="20" cy="30" r="3.5"/><circle cx="85" cy="58" r="3.5"/><circle cx="150" cy="86" r="3.5"/><circle cx="215" cy="112" r="3.5"/><text x="76" y="140">60 → 52 kg</text></svg></div>
+        <div class="fly-cap">Lost <b>8 kg</b> (60 → 52 kg) — PCOD reversed.</div>
       </div>
     </div>
   </div>
 
   <div class="trans-marquee">
     <div class="trans-track trans-track-rev" id="flyTrack2">
-      <!-- Card 1 -->
+      <!-- 5.png -->
       <div class="fly-card">
         <img class="bg" src="/static/5.png" alt="">
         <div class="fly-grad"></div>
         <span class="fly-hint">Hover for data</span>
-        <div class="fly-stat"><div class="big">120<small>mmHg</small></div><div class="lbl">Blood pressure ↘</div></div>
-        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,40 90,30 160,55 215,110"/><circle cx="20" cy="40" r="3.5"/><circle cx="90" cy="30" r="3.5"/><circle cx="160" cy="55" r="3.5"/><circle cx="215" cy="110" r="3.5"/><text x="12" y="135">150</text><text x="150" y="135">135</text><text x="200" y="135">120</text></svg></div>
-        <div class="fly-cap">From <b>118 kg</b> to <b>92 kg</b> and 15% body fat — my life back.</div>
+        <div class="fly-stat"><div class="big">12<small>kg</small></div><div class="lbl">PCOD reversed</div></div>
+        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,30 85,58 150,86 215,112"/><circle cx="20" cy="30" r="3.5"/><circle cx="85" cy="58" r="3.5"/><circle cx="150" cy="86" r="3.5"/><circle cx="215" cy="112" r="3.5"/><text x="76" y="140">74 → 62 kg</text></svg></div>
+        <div class="fly-cap">Down <b>12 kg</b> (74 → 62 kg) — PCOD reversed.</div>
       </div>
-      <!-- Card 2 -->
+      <!-- 6.png -->
       <div class="fly-card">
         <img class="bg" src="/static/6.png" alt="">
         <div class="fly-grad"></div>
         <span class="fly-hint">Hover for data</span>
-        <div class="fly-stat"><div class="big">85<small>mg/dL</small></div><div class="lbl">Diabetes ↘</div></div>
-        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,80 90,45 215,105"/><circle cx="20" cy="80" r="3.5"/><circle cx="90" cy="45" r="3.5"/><circle cx="215" cy="105" r="3.5"/><text x="6" y="125">200</text><text x="78" y="125">220</text><text x="178" y="125">85 mg/dl</text></svg></div>
-        <div class="fly-cap">Reversed diabetes, lost <b>17 kg</b> and gained energy.</div>
+        <div class="fly-stat"><div class="big">8<small>kg</small></div><div class="lbl">PCOD reversed</div></div>
+        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,30 85,58 150,86 215,112"/><circle cx="20" cy="30" r="3.5"/><circle cx="85" cy="58" r="3.5"/><circle cx="150" cy="86" r="3.5"/><circle cx="215" cy="112" r="3.5"/><text x="76" y="140">62 → 54 kg</text></svg></div>
+        <div class="fly-cap"><b>8 kg</b> lighter (62 → 54 kg) — PCOD reversed.</div>
       </div>
-      <!-- Card 3 -->
+      <!-- 7.png -->
       <div class="fly-card">
         <img class="bg" src="/static/7.png" alt="">
         <div class="fly-grad"></div>
         <span class="fly-hint">Hover for data</span>
-        <div class="fly-stat"><div class="big">17<small>kg</small></div><div class="lbl">Diabetes reversed</div></div>
-        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,35 90,60 160,80 215,115"/><circle cx="20" cy="35" r="3.5"/><circle cx="90" cy="60" r="3.5"/><circle cx="160" cy="80" r="3.5"/><circle cx="215" cy="115" r="3.5"/><text x="14" y="135">HbA1c 8.1 → 5.6</text></svg></div>
-        <div class="fly-cap">Reversed diabetes, lost <b>17 kg</b> — no more medication.</div>
+        <div class="fly-stat"><div class="big">22<small>kg</small></div><div class="lbl">Blood pressure resolved</div></div>
+        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,26 85,54 150,86 215,118"/><circle cx="20" cy="26" r="3.5"/><circle cx="85" cy="54" r="3.5"/><circle cx="150" cy="86" r="3.5"/><circle cx="215" cy="118" r="3.5"/><text x="76" y="140">82 → 60 kg</text></svg></div>
+        <div class="fly-cap"><b>22 kg</b> down (82 → 60 kg) — blood pressure resolved.</div>
       </div>
-      <!-- Card 4 -->
+      <!-- 8.png -->
       <div class="fly-card">
         <img class="bg" src="/static/8.png" alt="">
         <div class="fly-grad"></div>
         <span class="fly-hint">Hover for data</span>
-        <div class="fly-stat"><div class="big">35<small>kg</small></div><div class="lbl">Weight lost</div></div>
-        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,30 90,55 160,85 215,118"/><circle cx="20" cy="30" r="3.5"/><circle cx="90" cy="55" r="3.5"/><circle cx="160" cy="85" r="3.5"/><circle cx="215" cy="118" r="3.5"/><text x="6" y="135">92.5 kg → 57.5 kg</text></svg></div>
-        <div class="fly-cap">From PCOD and obesity to a life she loves.</div>
+        <div class="fly-stat"><div class="big">6<small>kg</small></div><div class="lbl">Bloating &amp; acidity resolved</div></div>
+        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,34 85,58 150,84 215,110"/><circle cx="20" cy="34" r="3.5"/><circle cx="85" cy="58" r="3.5"/><circle cx="150" cy="84" r="3.5"/><circle cx="215" cy="110" r="3.5"/><text x="76" y="140">72 → 66 kg</text></svg></div>
+        <div class="fly-cap">Lost <b>6 kg</b> (72 → 66 kg) — chronic bloating and acidity resolved.</div>
       </div>
-      <!-- Card 5 -->
+      <!-- 9.png -->
       <div class="fly-card">
         <img class="bg" src="/static/9.png" alt="">
         <div class="fly-grad"></div>
         <span class="fly-hint">Hover for data</span>
-        <div class="fly-stat"><div class="big">8<small>kg</small></div><div class="lbl">PCOD improved</div></div>
-        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,45 90,40 160,70 215,110"/><circle cx="20" cy="45" r="3.5"/><circle cx="90" cy="40" r="3.5"/><circle cx="160" cy="70" r="3.5"/><circle cx="215" cy="110" r="3.5"/><text x="14" y="135">Cycles regular in 5 mo</text></svg></div>
-        <div class="fly-cap"><b>Priya</b> — lost 8 kg, improved PCOD in 5 months.</div>
+        <div class="fly-stat"><div class="big">8<small>kg</small></div><div class="lbl">Blood pressure normalized</div></div>
+        <div class="fly-reveal"><svg class="fly-chart" viewBox="0 0 240 150"><polyline points="20,30 85,58 150,86 215,112"/><circle cx="20" cy="30" r="3.5"/><circle cx="85" cy="58" r="3.5"/><circle cx="150" cy="86" r="3.5"/><circle cx="215" cy="112" r="3.5"/><text x="76" y="140">78 → 70 kg</text></svg></div>
+        <div class="fly-cap">Down <b>8 kg</b> (78 → 70 kg) — blood pressure back in the normal range.</div>
       </div>
     </div>
   </div>
